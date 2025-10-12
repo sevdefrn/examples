@@ -52,3 +52,18 @@ CodeCoverage/
 *.VisualState.xml
 TestResult.xml
 nunit-*.xml
+
+echo .vs/>> .gitignoren
+echo bin/>> .gitignoren
+echo obj/>> .gitignoren
+
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+#Buil output
+bin/
+obj/
