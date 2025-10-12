@@ -1,35 +1,60 @@
 ﻿#region 1.KISIMM 
-DortIslem(4, 2, global::DortIslem.Toplam);
-DortIslem(4, 2, global::DortIslem.Cıkartma);
-DortIslem(4, 2, global::DortIslem.Carpma);
-DortIslem(4, 2, global::DortIslem.Bolme);
+//DortIslemParmetreli(4, 2, global::DortIslem.Toplam);
+//DortIslemParmetreli(4, 2, global::DortIslem.Cıkartma);
+//DortIslemParmetreli(4, 2, global::DortIslem.Carpma);
+//DortIslemParmetreli(4, 2, global::DortIslem.Bolme);
 
-static void DortIslem (double say1, double say2, DortIslem İslemTipi)
+//static void DortIslemParmetreli(double say1, double say2, DortIslem İslemTipi)
+//{
+//	switch (İslemTipi)
+//	{
+//		case global::DortIslem.Toplam:
+//			Console.WriteLine($"Toplam işlem sonucu:{say1 + say2}");
+//			break;
+//		case global::DortIslem.Cıkartma:
+//			Console.WriteLine($"Çıkartma işlem sonucu:{say1 - say2}");
+//			break;
+//		case global::DortIslem.Carpma:
+//			Console.WriteLine($"Çarpma işlem sonucu:{say1 * say2}");
+//			break;
+//		case global::DortIslem.Bolme:
+//			Console.WriteLine($"Bölme işlem sonucu:{say1 / say2}");
+//			break;
+//		default:
+//			break;
+//	}
+//}
+
+
+#endregion
+
+#region 2.KISIM
+
+static double DortİslemGeriDonuslu(int sayi1, int sayi2,DortIslem ıslemTipi)
 {
-	switch (İslemTipi)
+	switch (ıslemTipi)
 	{
-		case global::DortIslem.Toplam:
-			Console.WriteLine($"Toplam işlem sonucu:{say1 + say2}");
-			break;
-		case global::DortIslem.Cıkartma:
-            Console.WriteLine($"Çıkartma işlem sonucu:{say1 - say2}");
-            break;
-		case global::DortIslem.Carpma:
-            Console.WriteLine($"Çarpma işlem sonucu:{say1 * say2}");
-            break;
-		case global::DortIslem.Bolme:
-            Console.WriteLine($"Bölme işlem sonucu:{say1 / say2}");
-            break;
+		case DortIslem.Toplam:
+			return sayi1 + sayi2;
+		case DortIslem.Cıkartma:
+			return sayi1 - sayi2;
+		case DortIslem.Carpma:
+			return sayi1 * sayi2;
+		case DortIslem.Bolme:
+			return sayi1 / sayi2;
 		default:
-			break;
+			return 0;
 	}
 }
+double sonuc = DortİslemGeriDonuslu(4, 2, DortIslem.Toplam);
+Console.WriteLine($"Toplama işleminin sonucu:{sonuc}");
+
+#endregion
 
 enum DortIslem
 {
-	Toplam,
-	Cıkartma,
-	Carpma,
-	Bolme
+    Toplam,
+    Cıkartma,
+    Carpma,
+    Bolme
 }
-#endregion
