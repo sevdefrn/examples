@@ -61,11 +61,31 @@
 
 #region 3.KISIM
 using Metods;
+using System.Diagnostics.Metrics;
 
-OgrenciIslemleri ogrenci = new OgrenciIslemleri();
-ogrenci.SelamVer();
-ogrenci.SelamVer("Sevde");
-Console.WriteLine($"Yaşınız parametsiz:{ogrenci.YasHesapla()}");
-Console.WriteLine($"Yaşınız parametreli:{ogrenci.YasHesapla(2006)}");
+//OgrenciIslemleri ogrenci = new OgrenciIslemleri();
+//ogrenci.SelamVer();
+//ogrenci.SelamVer("Sevde");
+//Console.WriteLine($"Yaşınız parametsiz:{ogrenci.YasHesapla()}");
+//Console.WriteLine($"Yaşınız parametreli:{ogrenci.YasHesapla(2006)}");
 
 #endregion
+
+#region Ödev 1: Kahve Sipariş Uygulaması
+
+//TODO:program.cs Kullanıcı bir kahve siparişi verirken içecek türünü, şeker sayısını ve süt isteyip istemediğini seçsin.
+
+
+//TODO: KahveSiparisi adında bir sınıf olsun.
+//TODO:program.cs ücret ekrana yazdırılır.
+
+
+#endregion
+
+#region Ödev 2: Market Alışverişi Toplam Hesaplama
+
+MarketAlisverisi urun=new MarketAlisverisi();
+urun.hesapla();
+
+#endregion
+
