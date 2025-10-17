@@ -1,4 +1,4 @@
-﻿#region 1.KISIMM 
+﻿#region 1.KISIM
 //DortIslemParmetreli(4, 2, global::DortIslem.Toplam);
 //DortIslemParmetreli(4, 2, global::DortIslem.Cıkartma);
 //DortIslemParmetreli(4, 2, global::DortIslem.Carpma);
@@ -60,8 +60,6 @@
 #endregion
 
 #region 3.KISIM
-using Metods;
-using System.Diagnostics.Metrics;
 
 //OgrenciIslemleri ogrenci = new OgrenciIslemleri();
 //ogrenci.SelamVer();
@@ -73,19 +71,66 @@ using System.Diagnostics.Metrics;
 
 #region Ödev 1: Kahve Sipariş Uygulaması
 
-//TODO:program.cs Kullanıcı bir kahve siparişi verirken içecek türünü, şeker sayısını ve süt isteyip istemediğini seçsin.
+//using Metods;
 
+//Console.Write("Lütfen bir içicek seçiniz: 1-Türk Kahvesi, 2-Latte, 3-Esperrso: ");
+//string kahveTuru = Console.ReadLine();
+//Console.Write("Lütfen şeker sayısı giriniz: ");
+//int sekerSayisi = int.Parse(Console.ReadLine());
+//Console.Write("Süt ister misiniz(E/H): ");
+//string sutKontrol = Console.ReadLine();
+//bool sutVarmı = false;
+//if (sutKontrol == "E")
+//{
+//    sutVarmı = true;
+//}
+//switch (kahveTuru)
+//{
+//    case "1":
+//        kahveTuru = "Türk Kahvesi";
+//       break;
+//    case "2":
+//        kahveTuru = "Latte";
+//        break;
+//    case "3":
+//        kahveTuru = "Esperroso";
+//        break;
+//}
 
-//TODO: KahveSiparisi adında bir sınıf olsun.
-//TODO:program.cs ücret ekrana yazdırılır.
-
+//KahveSiparisi siparis = new KahveSiparisi();
+//Console.WriteLine(siparis.Hazırla(kahveTuru, sekerSayisi, sutVarmı));
+//Console.WriteLine($"Ödenicek tutar: {siparis.UcretHesaplama(kahveTuru)} TL");
 
 #endregion
 
 #region Ödev 2: Market Alışverişi Toplam Hesaplama
 
-MarketAlisverisi urun=new MarketAlisverisi();
-urun.hesapla();
+//using Metods;
+
+//Market market = new Market();
+//market.FiyatGir();
 
 #endregion
 
+#region Constructor Destructor
+
+using Metods.oop;
+Araba araba = new Araba("Opel");
+
+
+
+Ogrenci ogrenci = new Ogrenci();
+ogrenci.a1 = "ABVX213";
+ogrenci.a2 = "TESLKIWQEKQWOEQ";
+ogrenci.harcama = 4500;
+
+Console.WriteLine($"ApiKey:{ogrenci.a1}, ApiSecret:{ogrenci.a2}, Maaş:{ogrenci.harcama}");
+
+Kedi kedi = new Kedi();
+kedi.SesCikar("Miyavv!!!");
+
+Kopek kopek = new Kopek();
+kopek.SesCikar("Hav Hav!!!");
+
+
+#endregion

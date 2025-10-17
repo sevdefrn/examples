@@ -8,34 +8,40 @@ using System.Threading.Tasks;
 //{
 //    public class KahveSiparisi
 //    {
-//        public void hazırla(string tur, int seker, bool sut, KahveSiparisi kahve)
+//       public string Hazırla(string tur,int seker,bool sut)
 //        {
-//            Console.Write("Türk Kahvesi , Americano , Latte");
-//             tur = Console.ReadLine();
-
-//            Console.Write("Kahvenize şeker kaç şeker istersiniz: ");
-//             seker = int.Parse(Console.ReadLine());
-
-//            Console.Write("Kahvenizde süt olsun mu(E/H): ");
-//             sut = bool.Parse(Console.ReadLine());
-
+//            string kahve = " ";
+//            if (sut)
+//            {
+//                kahve += "Sütlü,";
+//            }
+//            else
+//            {
+//                kahve += "Sütsüz,";
+//            }
+//            if (seker > 0)
+//            {
+//                kahve += $"{seker} şekerli";
+//            }
+//            else
+//            {
+//                kahve += $"şekersiz";
+//            }
+//            return $"{kahve},{tur} hazır";
+//        }
+//        public decimal UcretHesaplama(string tur)
+//        {
 //            switch (tur)
 //            {
-//                case "TurkKahvesi":
-//                    return;
-//                case "Americano":
-//                    return;
+//                case "Türk Kahvesi":
+//                    return 40;
 //                case "Latte":
-//                    return;
-//                default:
-//                    break;
-
-                    
-
+//                    return 60;
+//                case "Espresso":
+//                    return 50;
 //            }
-//            Console.WriteLine($"")
+//            return 0;
 //        }
-
 //    }
 //}
 
