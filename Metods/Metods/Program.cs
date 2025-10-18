@@ -114,22 +114,22 @@
 
 #region Constructor Destructor
 
-using Metods.oop;
-Araba araba = new Araba("Opel");
+//using Metods.oop;
+//Araba araba = new Araba("Opel");
 
 
-Ogrenci ogrenci = new Ogrenci();
-ogrenci.a1 = "ABVX213";
-ogrenci.a2 = "TESLKIWQEKQWOEQ";
-ogrenci.harcama = 4500;
+//Ogrenci ogrenci = new Ogrenci();
+//ogrenci.a1 = "ABVX213";
+//ogrenci.a2 = "TESLKIWQEKQWOEQ";
+//ogrenci.harcama = 4500;
 
-Console.WriteLine($"ApiKey:{ogrenci.a1}, ApiSecret:{ogrenci.a2}, Maaş:{ogrenci.harcama}");
+//Console.WriteLine($"ApiKey:{ogrenci.a1}, ApiSecret:{ogrenci.a2}, Maaş:{ogrenci.harcama}");
 
-Kedi kedi = new Kedi();
-kedi.SesCikar("Miyavv!!!");
+//Kedi kedi = new Kedi();
+//kedi.SesCikar("Miyavv!!!");
 
-Kopek kopek = new Kopek();
-kopek.SesCikar("Hav Hav!!!");
+//Kopek kopek = new Kopek();
+//kopek.SesCikar("Hav Hav!!!");
 
 
 #endregion
