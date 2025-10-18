@@ -118,7 +118,6 @@ using Metods.oop;
 Araba araba = new Araba("Opel");
 
 
-
 Ogrenci ogrenci = new Ogrenci();
 ogrenci.a1 = "ABVX213";
 ogrenci.a2 = "TESLKIWQEKQWOEQ";
