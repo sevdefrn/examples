@@ -12,8 +12,17 @@
 
 #region Polymorphism (Çok Biçimli)
 
-using OOP.Polymorphism;
+//using OOP.Polymorphism;
 
-Dog dog = new Dog();
-dog.Sound();
+//Dog dog = new Dog();
+//dog.Sound();
+
+//Cat cat = new Cat();
+//cat.Sound();
+#endregion
+
+#region Kim Milyoner olmak ister
+
+
+
 #endregion
