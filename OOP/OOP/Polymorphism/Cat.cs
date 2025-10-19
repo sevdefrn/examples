@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OOP.Polymorphism
-{
-    public class Cat : Animal 
-    {
-        public override void Sound()
-        {
-            Console.WriteLine("Miyavvv!!!!!");
-        }
-    }
-}
+//namespace OOP.Polymorphism
+//{
+//    public class Cat : Animal 
+//    {
+//        public override void Sound()
+//        {
+//            Console.WriteLine("Miyavvv!!!!!");
+//        }
+//    }
+//}

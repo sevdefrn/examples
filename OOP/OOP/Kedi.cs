@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Metods.oop
+namespace OOP
 {
-    public class Kopek : Hayvan
+    public class Kedi : Hayvan
     {
     }
 }

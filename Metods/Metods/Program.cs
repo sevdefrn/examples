@@ -117,7 +117,7 @@
 //using Metods.oop;
 //Araba araba = new Araba("Opel");
 
-
+// Kapsülleme
 //Ogrenci ogrenci = new Ogrenci();
 //ogrenci.a1 = "ABVX213";
 //ogrenci.a2 = "TESLKIWQEKQWOEQ";
@@ -125,11 +125,14 @@
 
 //Console.WriteLine($"ApiKey:{ogrenci.a1}, ApiSecret:{ogrenci.a2}, Maaş:{ogrenci.harcama}");
 
-//Kedi kedi = new Kedi();
-//kedi.SesCikar("Miyavv!!!");
+// Kalıtım
+using Metods.oop;
 
-//Kopek kopek = new Kopek();
-//kopek.SesCikar("Hav Hav!!!");
+Kedi kedi = new Kedi();
+kedi.SesCikar("Miyavv!!!");
+
+Kopek kopek = new Kopek();
+kopek.SesCikar("Hav Hav!!!");
 
 
 #endregion
