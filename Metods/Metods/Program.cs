@@ -126,13 +126,13 @@
 //Console.WriteLine($"ApiKey:{ogrenci.a1}, ApiSecret:{ogrenci.a2}, Maaş:{ogrenci.harcama}");
 
 // Kalıtım
-using Metods.oop;
+//using Metods.oop;
 
-Kedi kedi = new Kedi();
-kedi.SesCikar("Miyavv!!!");
+//Kedi kedi = new Kedi();
+//kedi.SesCikar("Miyavv!!!");
 
-Kopek kopek = new Kopek();
-kopek.SesCikar("Hav Hav!!!");
+//Kopek kopek = new Kopek();
+//kopek.SesCikar("Hav Hav!!!");
 
 
 #endregion
