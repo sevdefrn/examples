@@ -46,81 +46,165 @@
 
 using OOP;
 
+//YarişmaMesajlar.YarismaBaslangicMesajiVer();
+//YarismaSeslei.AlkısSesleri(5, 2000);
+//string[] yarismacilar = { "Sevde", "Hilal", "Alper" };
+//Random rnd = new Random();
+//Baslangıc:
+//Console.ForegroundColor = ConsoleColor.Green;
+//Console.Write($"\n (Sunucu) Merhaba {yarismacilar[rnd.Next(0, 3)]} yarışmaya hoşgeldiniz. Heycanlı mısınız(E/H): ");
+//string heyecanCevap = Console.ReadLine();
+//switch (heyecanCevap.ToUpper())
+//{
+//    case "E":
+//        Console.ForegroundColor = ConsoleColor.Green;
+//        Console.WriteLine("(Sunucu) Heyacanlı olmanıza gerek yok. Sakin olmanız size yarışmada şans getirir. Bol şanslar. ");
+//        break;
+//    case "H":
+//        Console.ForegroundColor = ConsoleColor.Green;
+//        Console.WriteLine("(Sunucu) Süper.. Yarışmada sakin olmanız başarı şansınızı artırır. Bol şanslar.");
+
+//        break;
+//    default:
+//        Console.ForegroundColor = ConsoleColor.Green;
+//        Console.WriteLine("(Sunucu) Yanlış cevap verdiniz. Ben size heycanlı mısınız diyo sordu sordum?");
+//        goto Baslangıc;
+//        break;
+//}
+
+//Thread.Sleep(2000);
+//Console.ForegroundColor = ConsoleColor.Magenta;
+//Console.Write("(Sunucu) Şimdi!!! Yarışmaya başlıyalım mı (E/H): ");
+//string yarişamBaslamaCevap = Console.ReadLine();
+//if (yarişamBaslamaCevap.ToUpper().Equals("E"))
+//{
+//    int kazanc = 500;
+//    SoruCevap sorucevap = new SoruCevap();
+//    for (int i = 0; i < 15; i++)
+//    {
+//    SoruyuTekrarla:
+//        Console.WriteLine(sorucevap.SoruSor(i));
+//        Console.Write("Cevabınız: ");
+//        string cevap = Console.ReadLine();
+//        Thread.Sleep(2000);
+//        if (cevap.ToUpper() == "A" || cevap.ToUpper() == "B" || cevap.ToUpper() == "C" || cevap.ToUpper() == "D")
+//        {
+//            bool cevapDonus = sorucevap.CevapKontorl(i, cevap.ToUpper());
+//            if (!cevapDonus)
+//            {
+//                Console.WriteLine("Tüh!!!! Elendiniz!!! Yarışmacımaza kocaman bir alkış.");
+//                YarismaSeslei.AlkısSesleri(20, 0);
+//                Console.WriteLine($"Kazancınız:{kazanc} TL");
+//                break;
+//            }
+//            else
+//            {
+//                kazanc *= 2;
+//                YarismaSeslei.AlkısSesleri(5, 0);
+//                Console.WriteLine("Tebrikler . Cevabınız doğru..");
+//            }
+//            Console.WriteLine($"Kazancınız:{kazanc}");
+//        }
+//        else
+//        {
+//            Console.WriteLine("(Sunucu) Sen kafayı mı yedin? Şıklar belli sen ne seçtin ? Soruyu tekrarlıyorum. İyi dinle.....");
+//            Thread.Sleep(1000);
+//            goto SoruyuTekrarla;
+//        }
+//    }
+
+//}
+//else
+//{
+//    Thread.Sleep(1000);
+//    Console.ForegroundColor = ConsoleColor.Red;
+//    Console.WriteLine("(Sunucu) Anladım! Hazır olduğunuzda lütfen tekrar yarışmamıza katılın. Size yol parası hediye ediyoruz !!! Alkışlar yarışmacımız için !!!");
+//    YarismaSeslei.AlkısSesleri(10, 2000);
+//}
+
+//Console.ReadKey();
+#endregion
+
+#region Ödev
+
 YarişmaMesajlar.YarismaBaslangicMesajiVer();
-YarismaSeslei.AlkısSesleri(5,2000);
-string[] yarismacilar = { "Sevde", "Hilal", "Alper" };
+YarismaSeslei.AlkısSesleri(20, 2000);
+string[] yarismacılar = { "Sevde", "Hilal", "Alper" };
 Random rnd = new Random();
 Baslangıc:
 Console.ForegroundColor = ConsoleColor.Green;
-Console.Write($"\n (Sunucu) Merhaba {yarismacilar[rnd.Next(0, 3)]} yarışmaya hoşgeldiniz. Heycanlı mısınız(E/H): ");
+Console.Write($"\n (Sunucu) Merhaba {yarismacılar[rnd.Next(0, 3)]} yarışmaya hoşgeldiniz.Heycanlı mısınız(E/H): ");
 string heyecanCevap = Console.ReadLine();
 switch (heyecanCevap.ToUpper())
 {
 	case "E":
-        Console.ForegroundColor = ConsoleColor.Green;
-        Console.WriteLine("(Sunucu) Heyacanlı olmanıza gerek yok. Sakin olmanız size yarışmada şans getirir. Bol şanslar. ");
+		Console.ForegroundColor = ConsoleColor.Green;
+		Console.WriteLine("(Sunucu) Heyecanlı olmanıza gerek yok. Sakin olmanız başarı şansınızı arttırı.Bol şanslar");
 		break;
-    case "H":
-        Console.ForegroundColor = ConsoleColor.Green;
-        Console.WriteLine("(Sunucu) Süper.. Yarışmada sakin olmanız başarı şansınızı artırır. Bol şanslar.");
-
-        break;
-    default:
-        Console.ForegroundColor = ConsoleColor.Green;
-        Console.WriteLine("(Sunucu) Yanlış cevap verdiniz. Ben size heycanlı mısınız diyo sordu sordum?");
-        goto Baslangıc;
+	case "H":
+		Console.ForegroundColor = ConsoleColor.Green;
+		Console.WriteLine("(Sunucu) Süper... Sakin olmanız başarı şansınızı arttırı.Bol şanslar.  ");
+		break;
+	default:
+		Console.ForegroundColor = ConsoleColor.Green;
+		Console.WriteLine("(Sunucu) Yanlış cevap... Ben size heyecanlı misiniz diye soru sordum?");
+		goto Baslangıc;
 		break;
 }
 
-Thread.Sleep(2000);
+Thread.Sleep(1000);
 Console.ForegroundColor = ConsoleColor.Magenta;
-Console.Write("(Sunucu) Şimdi!!! Yarışmaya başlıyalım mı (E/H): ");
-string yarişamBaslamaCevap = Console.ReadLine();
-if (yarişamBaslamaCevap.ToUpper().Equals("E"))
+Console.Write("(Sunucu) Şimdi!!!!! Yarışmaya başlıyalım mı (E/H): ");
+string yarismaBaslamaCevap = Console.ReadLine();
+if (yarismaBaslamaCevap.ToUpper().Equals("E"))
 {
-    int kazanc = 500;
-    SoruCevap sorucevap = new SoruCevap();
-    for(int i=0; i<15; i++)
-    {
-    SoruyuTekrarla:
-        Console.WriteLine(sorucevap.SoruSor(i));
-        Console.Write("Cevabınız: ");
-        string cevap = Console.ReadLine();
-        Thread.Sleep(2000);
-        if(cevap.ToUpper()== "A"|| cevap.ToUpper() == "B" || cevap.ToUpper() == "C" || cevap.ToUpper() == "D")
-        {
-            bool cevapDonus = sorucevap.CevapKontorl(i, cevap.ToUpper());
-            if (!cevapDonus)
-            {
-                Console.WriteLine("Tüh!!!! Elendiniz!!! Yarışmacımaza kocaman bir alkış.");
-                YarismaSeslei.AlkısSesleri(20, 0);
-                Console.WriteLine($"Kazancınız:{kazanc} TL");
-                break;
-            }
-            else
-            {
-                kazanc *= 2;
-                YarismaSeslei.AlkısSesleri(5, 0);
-                Console.WriteLine("Tebrikler . Cevabınız doğru..");
-            }
-            Console.WriteLine($"Kazancınız:{kazanc}");
-        }
-        else
-        {
-            Console.WriteLine("(Sunucu) Sen kafayı mı yedin? Şıklar belli sen ne seçtin ? Soruyu tekrarlıyorum. İyi dinle.....");
-            Thread.Sleep(1000);
-            goto SoruyuTekrarla;
-        }
-    }
+	int kazanc = 66666;
+	int kazanc2 = kazanc;
+	YarişmaMesajlar.YarismaBasliyorMesaji();
+	SoruCevap sorucevap = new SoruCevap();
+	for (int i = 0; i < 15; i++)
+	{
+	SoruyuTekrarSor:
+		Console.WriteLine(sorucevap.SoruSor(i));
+		Console.Write("Cevabınız: ");
+		string cevap = Console.ReadLine();
+		Thread.Sleep(2000);
+		if (cevap.ToUpper() == "A" || cevap.ToUpper() == "B" || cevap.ToUpper() == "C" || cevap.ToUpper() == "D")
+		{
+			bool cevapDönüş = sorucevap.CevapKontorl(i, cevap.ToUpper());
+			if (!cevapDönüş)
+			{
+				Console.WriteLine("Tüh!!! Elendiniz.. Tekrar Giriniz.");
+				YarismaSeslei.AlkısSesleri(20, 0);
+				Console.WriteLine($"Kazancınız:{kazanc}");
+				break;
+			}
+			else
+			{
 
+				 kazanc2 += kazanc;
+				YarismaSeslei.AlkısSesleri(5, 0);
+				Console.WriteLine("Tebrikler.. Cevabınız doğru..");
+
+			}
+			Console.WriteLine($"Kazancınız:{kazanc2}");
+			
+		}
+		else
+		{
+			Console.WriteLine("(Sunucu) Sen kafayı mı yedin? Şıklar belli sen ne seçtin ? Soruyu tekrarlıyorum. İyi dinle.....");
+			Thread.Sleep(2000);
+			goto SoruyuTekrarSor;
+		}
+	}
 }
 else
 {
-    Thread.Sleep(1000);
-    Console.ForegroundColor = ConsoleColor.Red;
-    Console.WriteLine("(Sunucu) Anladım! Hazır olduğunuzda lütfen tekrar yarışmamıza katılın. Size yol parası hediye ediyoruz !!! Alkışlar yarışmacımız için !!!");
-    YarismaSeslei.AlkısSesleri(10, 2000);
+	Thread.Sleep(2000);
+	Console.ForegroundColor = ConsoleColor.Red;
+	Console.WriteLine("(Sunucu) Anladım! Hazır olduğunuzda lütfen tekrar yarışmamıza katılın. Size yol parası hediye ediyoruz !!! Alkışlar yarışmacımız için !!!");
+	YarismaSeslei.AlkısSesleri(20, 2000);
 }
-
 Console.ReadKey();
+
 #endregion

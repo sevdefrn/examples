@@ -26,7 +26,7 @@ namespace OOP
 
             // Geri sayım
             Console.ForegroundColor = ConsoleColor.Magenta;
-            for(int i=3; i>=1; i++)
+            for(int i=3; i>=1; i--)
             {
                 Console.WriteLine($"\n {i}...");
                 Thread.Sleep(1000);
