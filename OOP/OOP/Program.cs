@@ -58,20 +58,20 @@ using System.Threading.Tasks.Dataflow;
 //string heyecanCevap = Console.ReadLine();
 //switch (heyecanCevap.ToUpper())
 //{
-//    case "E":
-//        Console.ForegroundColor = ConsoleColor.Green;
-//        Console.WriteLine("(Sunucu) Heyacanlı olmanıza gerek yok. Sakin olmanız size yarışmada şans getirir. Bol şanslar. ");
-//        break;
-//    case "H":
-//        Console.ForegroundColor = ConsoleColor.Green;
-//        Console.WriteLine("(Sunucu) Süper.. Yarışmada sakin olmanız başarı şansınızı artırır. Bol şanslar.");
+//case "E":
+//Console.ForegroundColor = ConsoleColor.Green;
+//Console.WriteLine("(Sunucu) Heyacanlı olmanıza gerek yok. Sakin olmanız size yarışmada şans getirir. Bol şanslar. ");
+//break;
+//case "H":
+//Console.ForegroundColor = ConsoleColor.Green;
+//Console.WriteLine("(Sunucu) Süper.. Yarışmada sakin olmanız başarı şansınızı artırır. Bol şanslar.");
 
-//        break;
-//    default:
-//        Console.ForegroundColor = ConsoleColor.Green;
-//        Console.WriteLine("(Sunucu) Yanlış cevap verdiniz. Ben size heycanlı mısınız diyo sordu sordum?");
-//        goto Baslangıc;
-//        break;
+//break;
+//default:
+//Console.ForegroundColor = ConsoleColor.Green;
+//Console.WriteLine("(Sunucu) Yanlış cevap verdiniz. Ben size heycanlı mısınız diyo sordu sordum?");
+//goto Baslangıc;
+//break;
 //}
 
 //Thread.Sleep(2000);
@@ -80,48 +80,48 @@ using System.Threading.Tasks.Dataflow;
 //string yarişamBaslamaCevap = Console.ReadLine();
 //if (yarişamBaslamaCevap.ToUpper().Equals("E"))
 //{
-//    int kazanc = 500;
-//    SoruCevap sorucevap = new SoruCevap();
-//    for (int i = 0; i < 15; i++)
-//    {
-//    SoruyuTekrarla:
-//        Console.WriteLine(sorucevap.SoruSor(i));
-//        Console.Write("Cevabınız: ");
-//        string cevap = Console.ReadLine();
-//        Thread.Sleep(2000);
-//        if (cevap.ToUpper() == "A" || cevap.ToUpper() == "B" || cevap.ToUpper() == "C" || cevap.ToUpper() == "D")
-//        {
-//            bool cevapDonus = sorucevap.CevapKontorl(i, cevap.ToUpper());
-//            if (!cevapDonus)
-//            {
-//                Console.WriteLine("Tüh!!!! Elendiniz!!! Yarışmacımaza kocaman bir alkış.");
-//                YarismaSeslei.AlkısSesleri(20, 0);
-//                Console.WriteLine($"Kazancınız:{kazanc} TL");
-//                break;
-//            }
-//            else
-//            {
-//                kazanc *= 2;
-//                YarismaSeslei.AlkısSesleri(5, 0);
-//                Console.WriteLine("Tebrikler . Cevabınız doğru..");
-//            }
-//            Console.WriteLine($"Kazancınız:{kazanc}");
-//        }
-//        else
-//        {
-//            Console.WriteLine("(Sunucu) Sen kafayı mı yedin? Şıklar belli sen ne seçtin ? Soruyu tekrarlıyorum. İyi dinle.....");
-//            Thread.Sleep(1000);
-//            goto SoruyuTekrarla;
-//        }
-//    }
+//int kazanc = 500;
+//SoruCevap sorucevap = new SoruCevap();
+//for (int i = 0; i < 15; i++)
+//{
+//SoruyuTekrarla:
+//Console.WriteLine(sorucevap.SoruSor(i));
+//Console.Write("Cevabınız: ");
+//string cevap = Console.ReadLine();
+//Thread.Sleep(2000);
+//if (cevap.ToUpper() == "A" || cevap.ToUpper() == "B" || cevap.ToUpper() == "C" || cevap.ToUpper() == "D")
+//{
+//bool cevapDonus = sorucevap.CevapKontorl(i, cevap.ToUpper());
+//if (!cevapDonus)
+//{
+//Console.WriteLine("Tüh!!!! Elendiniz!!! Yarışmacımaza kocaman bir alkış.");
+//YarismaSeslei.AlkısSesleri(20, 0);
+//Console.WriteLine($"Kazancınız:{kazanc} TL");
+//break;
+//}
+//else
+//{
+//kazanc *= 2;
+//YarismaSeslei.AlkısSesleri(5, 0);
+//Console.WriteLine("Tebrikler . Cevabınız doğru..");
+//}
+//Console.WriteLine($"Kazancınız:{kazanc}");
+//}
+//else
+//{
+//Console.WriteLine("(Sunucu) Sen kafayı mı yedin? Şıklar belli sen ne seçtin ? Soruyu tekrarlıyorum. İyi dinle.....");
+//Thread.Sleep(1000);
+//goto SoruyuTekrarla;
+//}
+//}
 
 //}
 //else
 //{
-//    Thread.Sleep(1000);
-//    Console.ForegroundColor = ConsoleColor.Red;
-//    Console.WriteLine("(Sunucu) Anladım! Hazır olduğunuzda lütfen tekrar yarışmamıza katılın. Size yol parası hediye ediyoruz !!! Alkışlar yarışmacımız için !!!");
-//    YarismaSeslei.AlkısSesleri(10, 2000);
+//Thread.Sleep(1000);
+//Console.ForegroundColor = ConsoleColor.Red;
+//Console.WriteLine("(Sunucu) Anladım! Hazır olduğunuzda lütfen tekrar yarışmamıza katılın. Size yol parası hediye ediyoruz !!! Alkışlar yarışmacımız için !!!");
+//YarismaSeslei.AlkısSesleri(10, 2000);
 //}
 
 //Console.ReadKey();
@@ -193,8 +193,7 @@ switch (baslamaCevap.ToUpper())
                 bool cevapDonus = soru.CevapKontrol(i, cevap.ToUpper());
                 if (!cevapDonus)
                 {
-                    puan += sayac;
-                    puan = sayac;
+                    sayac = puan;
                     Console.WriteLine("Yanlış cevap verdiniz! Oyun bitti.");
                     Console.WriteLine($"Toplam puanınız:{puan}");
                     break;

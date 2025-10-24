@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 //{
 //    public static class YarismaSeslei
 //    {
-//        public static void AlkısSesleri(int alkısSayısı , int beklmeSuresi)
+//        public static void AlkısSesleri(int alkısSayısı, int beklmeSuresi)
 //        {
 //            Thread.Sleep(beklmeSuresi);
-//            for(int i=0; i<alkısSayısı; i++)
+//            for (int i = 0; i < alkısSayısı; i++)
 //            {
 //                Console.Beep(800, 150);
 //            }
