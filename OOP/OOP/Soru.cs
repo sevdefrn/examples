@@ -29,13 +29,13 @@ namespace OOP
         // Doğru cevaplar
         string[] cevaplar = { "B", "A", "B", "B", "A" };
         
-        public string SoruSor(int indexNumarsı)
+        public string SoruSor(int indexNumarasi)
         {
-            string soru = sorular[indexNumarsı];
+            string soru = sorular[indexNumarasi];
             string cevaplar = " ";
-            for(int i=0; i<4; i++)
+            for (int i=0; i<4; i++)
             {
-                cevaplar += " " + siklar[indexNumarsı, i];
+                cevaplar += " " + siklar[indexNumarasi, i];
             }
             return $"\n {soru} \n\n {cevaplar}";
         }

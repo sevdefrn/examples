@@ -128,42 +128,6 @@ using System.Threading.Tasks.Dataflow;
 #endregion
 
 #region Ödev
-// Program başlarken kullanıcıdan adını alsın.
-//Sorular rastgele sıralansın.
-//Her doğru cevap için 10 puan, yanlış cevapta ise oyun bitsin
-//Oyuncunun toplam puanı en sonunda gösterilsin.
-
-//Console.Write("(Sunucu) Merhabalar lütfen adınızı giriniz: ");
-//string ad = Console.ReadLine();
-
-//Console.WriteLine("========================= BİLGİ YARIŞMASI ======================");
-//Console.WriteLine($"(Sunucu) Bilgi oyununa hoşgeldin {ad}!");
-
-
-
-//Console.ForegroundColor = ConsoleColor.Magenta;
-////Console.Write($"{ad} Şimdi!!! Oyuna başlıyalım mı (E/H): ");
-////string oyunaBaslamaCevap = Console.ReadLine();
-////if (oyunaBaslamaCevap.ToUpper().Equals("E"))
-////{
-//    int puan = 10;
-//    Sorular soru = new Sorular();
-//    foreach (string item in soru.sorular)
-//    {
-//    SoruyuTekrarla:
-//        Console.WriteLine(soru.sorular);
-//        Console.WriteLine("Cevabınız: ");
-//        string cevap = Console.ReadLine();
-//        Thread.Sleep(2000);
-//        if (cevap.ToUpper() == "A" || cevap.ToUpper() == "B" || cevap.ToUpper() == "C" || cevap.ToUpper() == "D")
-//        {
-
-//        }
-//    }
-//}
-
-
-#endregion
 
 //Program başlarken kullanıcıdan adını alsın.
 Baslangic:
@@ -172,7 +136,7 @@ string ad = Console.ReadLine();
 
 Console.Write($"Merhaba {ad}. Oyuna başlıyalım mı(E/H): ");
 string baslamaCevap = Console.ReadLine();
-
+// TODO:Oyuna başlama sorusu cevabı
 switch (baslamaCevap.ToUpper())
 {
     case "E":
@@ -180,16 +144,20 @@ switch (baslamaCevap.ToUpper())
         Console.WriteLine($"Harika {ad}!!!!! O zaman oyuna başlıyalım...");
         Thread.Sleep(2000);
         Soru soru = new Soru();
+        //TODO:Puan hesaplama
         int puan = 0;
         int sayac = 10;
+        Random rnd = new Random();
         for (int i = 0; i < 5; i++)
         {
+            //TODO:Soruları döngüye programda cs de göster
         SoruyuTekrarla:
             Console.WriteLine(soru.SoruSor(i));
             Console.Write("Cevabınız: ");
             string cevap = Console.ReadLine();
-            if(cevap.ToUpper()=="A"|| cevap.ToUpper() == "B" || cevap.ToUpper() == "C" || cevap.ToUpper() == "D")
+            if (cevap.ToUpper() == "A" || cevap.ToUpper() == "B" || cevap.ToUpper() == "C" || cevap.ToUpper() == "D")
             {
+                //TODO:DOĞRU YANLIŞ KONTUROL
                 bool cevapDonus = soru.CevapKontrol(i, cevap.ToUpper());
                 if (!cevapDonus)
                 {
@@ -217,4 +185,5 @@ switch (baslamaCevap.ToUpper())
         goto Baslangic;
         break;
 }
+#endregion
 

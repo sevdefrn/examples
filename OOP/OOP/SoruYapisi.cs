@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace OOP
 {
-    public class SoruYapısı : Soru
+    public class SoruYapisi
     {
         public string Metin { get; set; } 
         public string[] Seceneklar { get; set; }
