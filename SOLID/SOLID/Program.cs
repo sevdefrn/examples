@@ -20,13 +20,49 @@
 //Console.WriteLine($"Karenin alanı:{kare.Alan()}");
 #endregion
 
-#region 
-using SOLID.LiskovSubstitution;
-using System.Collections.Specialized;
+#region LİSKOV SUBSTİTUTİON PRINCIPLE
 
-Eagle eagle = new Eagle();
-eagle.Fly();
+//using SOLID.LiskovSubstitution;
+//using System.Collections.Specialized;
 
-Penguen penguen = new Penguen();
-penguen.Fly();
+//Eagle eagle = new Eagle();
+//eagle.Fly();
+
+//Penguen penguen = new Penguen();
+//penguen.Fly();
+
 #endregion
+
+#region INRETFACE SEGREGATITON
+
+//using SOLID.InterfaceSegregatiton;
+
+//Human human = new Human();
+//Brid brid = new Brid();
+
+//human.Talk();
+//human.Work();
+
+//brid.Talk();
+//brid.Work();
+//brid.Fly();
+
+//WashingMachine washingMachine = new WashingMachine();
+//DeepFrezee deepFrezee = new DeepFrezee();
+
+//washingMachine.Washing();
+//washingMachine.UseElectric();
+
+//deepFrezee.UseElectric();
+//deepFrezee.Freezing();
+#endregion
+
+#region DEPENDENCY INVERSİON
+
+using SOLID.DependencyInversion;
+
+Order order = new Order();
+order.Onay();
+
+#endregion
+

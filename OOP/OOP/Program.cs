@@ -147,12 +147,12 @@ switch (baslamaCevap.ToUpper())
         //TODO:Puan hesaplama
         int puan = 0;
         int sayac = 10;
-        Random rnd = new Random();
         for (int i = 0; i < 5; i++)
         {
-            //TODO:Soruları döngüye programda cs de göster
+        //TODO:Soruları döngüye programda cs de göster
         SoruyuTekrarla:
             Console.WriteLine(soru.SoruSor(i));
+            Console.WriteLine(soru.JokerHakkı());
             Console.Write("Cevabınız: ");
             string cevap = Console.ReadLine();
             if (cevap.ToUpper() == "A" || cevap.ToUpper() == "B" || cevap.ToUpper() == "C" || cevap.ToUpper() == "D")

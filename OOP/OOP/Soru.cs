@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -28,18 +29,24 @@ namespace OOP
 
         // Doğru cevaplar
         string[] cevaplar = { "B", "A", "B", "B", "A" };
-        
+
+       
+
         public string SoruSor(int indexNumarasi)
         {
+            Random rnd = new Random();
+            indexNumarasi = rnd.Next(0, sorular.Length);
             string soru = sorular[indexNumarasi];
             string cevaplar = " ";
-            for (int i=0; i<4; i++)
+
+            for (int i = 0; i < 4; i++)
             {
                 cevaplar += " " + siklar[indexNumarasi, i];
             }
+
             return $"\n {soru} \n\n {cevaplar}";
         }
-        public bool CevapKontrol(int index,string gelenCevap)
+        public bool CevapKontrol(int index, string gelenCevap)
         {
             string cevap = cevaplar[index];
             if (cevap == gelenCevap)
@@ -47,6 +54,24 @@ namespace OOP
                 return true;
             }
             else return false;
+        }
+        public string JokerHakkı(int index)
+        {
+            Console.WriteLine("Joker kullanmak ister misiniz(E/H): ");
+            string jokerSecim = Console.ReadLine();
+            if (jokerSecim == "E")
+            {
+                Random rnd = new Random();
+                string dogru = cevaplar[index];
+                string[] secenekler = { "A", "B", "C", "D" };
+
+                dogru = secenekler[index];
+                rnd.Next(dogru[index]);
+            }
+            else
+            {
+            }
+
         }
     }
 }
