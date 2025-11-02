@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SOLID.Soliti
+namespace SunumÖdevi._S_PresentationFile
 {
     public class MailService
     {
-        public void SendMail(string subject, string body)
+        public void SendMail()
         {
             Console.WriteLine("Mail sended.");
         }

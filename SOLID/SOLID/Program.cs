@@ -3,6 +3,8 @@
 //Bir sinif yalnizca bir sorumluluga sahip olmalidir. Degigiklik gereksinimi yalnizca bu sorumluluga göre olmalidir.
 //using SOLID.Soliti;
 
+//using SOLID.Soliti;
+
 //StudentService studentService = new StudentService();
 //studentService.CreateStudent();
 
@@ -59,10 +61,12 @@
 
 #region DEPENDENCY INVERSİON
 
-using SOLID.DependencyInversion;
+//using SOLID.DependencyInversion;
 
-Order order = new Order();
-order.Onay();
+//Order order = new Order();
+//order.Onay();
 
 #endregion
+
+
 
