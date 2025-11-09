@@ -11,9 +11,6 @@ namespace SunumÖdevi._D_Car
         void Brand();
         void Brand2();
         void Brand3();
-        void Brand4();
-        void Brand5();
-
 
     }
 }

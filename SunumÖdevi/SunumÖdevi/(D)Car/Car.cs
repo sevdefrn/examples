@@ -15,7 +15,7 @@ namespace SunumÖdevi._D_Car
 
         public void Brand2()
         {
-            Console.WriteLine("Brand -----> Fiat");
+            Console.WriteLine("Brand -----> Maserati");
         }
 
         public void Brand3()
@@ -23,14 +23,6 @@ namespace SunumÖdevi._D_Car
             Console.WriteLine("Brand -----> Lamborghini");
         }
 
-        public void Brand4()
-        {
-            Console.WriteLine("Brand -----> Maserati");
-        }
-
-        public void Brand5()
-        {
-            Console.WriteLine("Brand -----> Volkswogen");
-        }
+      
     }
 }
