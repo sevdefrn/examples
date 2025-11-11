@@ -1,4 +1,4 @@
-﻿
+﻿#region Singleton
 //using DesignPatterns.Singleton;
 //using DesignPatterns.Student;
 
@@ -10,11 +10,19 @@
 //studentService.Delete();
 //studentService.List();
 //studentService.Update();
+#endregion
+
+#region Factory
+//using DesignPatterns.Factory;
+
+//var sekildaire = SekilFactory.GetSekil("daire");
+//var sekilkare = SekilFactory.GetSekil("kare");
+//sekildaire.Ciz();
+//sekilkare.Ciz();
+#endregion
+
+#region ÖDEV
 
 
-using DesignPatterns.Factory;
 
-var sekildaire = SekilFactory.GetSekil("daire");
-var sekilkare = SekilFactory.GetSekil("kare");
-sekildaire.Ciz();
-sekilkare.Ciz();
+#endregion

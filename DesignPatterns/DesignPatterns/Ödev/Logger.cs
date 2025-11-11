@@ -4,23 +4,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DesignPatterns.Singleton
+namespace DesignPatterns.Ödev
 {
     public class Logger
     {
-        private static Logger instance;
+        private static Logger bildirim;
         private Logger() { }
-        public static Logger GetInstance()
+
+        public static Logger gelenBildirim()
         {
-            if (instance == null)
+            if (bildirim == null)
             {
-                instance = new Logger();
+                bildirim = new Logger();
             }
-            return instance;
+            return bildirim;
         }
         public void Log(string message)
         {
-            Console.WriteLine($"Log----->{message}");
+            Console.WriteLine($"Bildirim:{message}");
         }
     }
 }
