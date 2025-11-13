@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DesignPatterns.Factory
-{
-    public interface ISekil
-    {
-        void Ciz();
-    }
-}
+//namespace DesignPatterns.Factory
+//{
+//    public interface ISekil
+//    {
+//        void Ciz();
+//    }
+//}

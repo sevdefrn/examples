@@ -11,21 +11,22 @@ namespace DesignPatterns.Ödev
     {
         public static ISiparis GetSiparis(string name)
         {
+            var logger = Logger.GetBildirim();
             switch (name)
             {
-
                 case "zeytinli":
-                    return new ZeytinliMakarna();
+                    return new ZeytinliMakarna(logger);
                 case "mantarlı":
-                    return new MantarliMakarna();
+                    return new MantarliMakarna(logger);
                 case "körili":
-                    return new KoriliMakarna();
+                    return new KoriliMakarna(logger);
                 case "macnCheese":
-                    return new MacnCheese();
+                    return new MacnCheese(logger);
                 case "közlü":
-                    return new KozluMakarna();
+                    return new KozluMakarna(logger);
                 default:
                     throw new Exception("Bilinmeyen makarna çeşiti.");
+                    break;
             }
         }
     }

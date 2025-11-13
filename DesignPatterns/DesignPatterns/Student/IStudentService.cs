@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DesignPatterns.Student
-{
-    public interface IStudentService
-    {
-        void List();
-        void Add();
-        void Delete();
-        void Update();
-    }
-}
+//namespace DesignPatterns.Student
+//{
+//    public interface IStudentService
+//    {
+//        void List();
+//        void Add();
+//        void Delete();
+//        void Update();
+//    }
+//}

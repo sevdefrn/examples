@@ -10,8 +10,7 @@ namespace DesignPatterns.Ödev
     {
         private static Logger bildirim;
         private Logger() { }
-
-        public static Logger gelenBildirim()
+        public static Logger GetBildirim()
         {
             if (bildirim == null)
             {
