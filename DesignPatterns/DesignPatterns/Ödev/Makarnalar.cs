@@ -8,14 +8,12 @@ namespace DesignPatterns.Ödev
 {
     public class ZeytinliMakarna : ISiparis
     {
-        public Logger _logger;
-        public ZeytinliMakarna(Logger? log) => _logger = log;
         public void Hazırla()
         {
+            Logger logger = Logger.GetBildirim();
             Console.WriteLine("Zeytinli makarna siparişiniz alındı.");
             Thread.Sleep(5000);
-            _logger.Log("Zeytinli makarnanız hazır :)");
-
+            logger.Log("Zeytinli makarnanız hazır :)");
         }
     }
     public class MantarliMakarna : ISiparis

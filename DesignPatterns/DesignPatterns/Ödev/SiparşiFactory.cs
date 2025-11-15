@@ -15,7 +15,7 @@ namespace DesignPatterns.Ödev
             switch (name)
             {
                 case "zeytinli":
-                    return new ZeytinliMakarna(logger);
+                    return new ZeytinliMakarna();
                 case "mantarlı":
                     return new MantarliMakarna(logger);
                 case "körili":

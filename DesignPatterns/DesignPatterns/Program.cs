@@ -25,15 +25,16 @@
 
 using DesignPatterns.Ödev;
 
+
 var makarnazeytin = SiparisFactory.GetSiparis("zeytinli");
-var makarnamantar = SiparisFactory.GetSiparis("mantarlı");
-var makarnakorı = SiparisFactory.GetSiparis("körili");
-var makarnamacncehesee = SiparisFactory.GetSiparis("macnchesee");
-var makarnakozlu = SiparisFactory.GetSiparis("közlü");
+//var makarnamantar = SiparisFactory.GetSiparis("mantarlı");
+//var makarnakorı = SiparisFactory.GetSiparis("körili");
+//var makarnamacncehesee = SiparisFactory.GetSiparis("macnchesee");
+//var makarnakozlu = SiparisFactory.GetSiparis("közlü");
 
 makarnazeytin.Hazırla();
-makarnamantar.Hazırla();
-makarnakorı.Hazırla();
-makarnamacncehesee.Hazırla();
-makarnakozlu.Hazırla();
+//makarnamantar.Hazırla();
+//makarnakorı.Hazırla();
+//makarnamacncehesee.Hazırla();
+//makarnakozlu.Hazırla();
 #endregion
