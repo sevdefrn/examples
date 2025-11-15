@@ -1,0 +1,11 @@
+﻿body {
+    background-color: #ff0000;
+}
+
+    body p {
+        color: #1d074d;
+        text-align: center;
+        font-size: 25px;
+        font-weight: bold;
+        font-family: Arial;
+    }
