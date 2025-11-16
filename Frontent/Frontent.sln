@@ -16,10 +16,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "images", "images", "{77648E
 		library\images\facebook.png = library\images\facebook.png
 		library\images\images.jpeg = library\images\images.jpeg
 		library\images\instagram.png = library\images\instagram.png
+		library\images\kadın.jpg = library\images\kadın.jpg
 		library\images\linkedin.png = library\images\linkedin.png
+		library\images\ogrenci.jpg = library\images\ogrenci.jpg
+		library\images\on.jpg = library\images\on.jpg
 		..\..\..\..\..\Downloads\slider.png = ..\..\..\..\..\Downloads\slider.png
 		library\images\twitter.png = library\images\twitter.png
 		library\images\whatsapp.png = library\images\whatsapp.png
+		library\images\yarın.png = library\images\yarın.png
 	EndProjectSection
 EndProject
 Global
