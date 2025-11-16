@@ -12,6 +12,15 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "library", "library", "{7493B136-45AE-4A8E-9DA1-40660204D3BD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "images", "images", "{77648E60-87DB-4623-A534-FDE8E8035654}"
+	ProjectSection(SolutionItems) = preProject
+		library\images\facebook.png = library\images\facebook.png
+		library\images\images.jpeg = library\images\images.jpeg
+		library\images\instagram.png = library\images\instagram.png
+		library\images\linkedin.png = library\images\linkedin.png
+		..\..\..\..\..\Downloads\slider.png = ..\..\..\..\..\Downloads\slider.png
+		library\images\twitter.png = library\images\twitter.png
+		library\images\whatsapp.png = library\images\whatsapp.png
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionProperties) = preSolution
