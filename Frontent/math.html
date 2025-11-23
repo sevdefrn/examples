@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Matematiksel işlemler</title>
+</head>
+<body>
+    <input id="nameInput" type="text" placeholder="Adınızı Soyadınnız" />
+    <button onclick="showName()">Göster</button>
+    <p id="output"></p>
+    <div>
+        <h2>Matematiksle İşlemler</h2>
+        <input type="number" id="sayi1" placeholder="Sayı 1" />
+        <input type="number" id="sayi2" placeholder="Sayı 2" />
+        <br />
+        <button onclick="topla()">Topla</button>
+        <button onclick="cıkart()">Çıkart</button>
+        <button onclick="bolme()">Bölme</button>
+        <button onclick="carp()">Çarp</button>
+        <br />
+        <p id="result"></p>
+        <br />
+        <h3>Sayaç</h3>
+        <p id="count"></p>
+        <button onclick="arttir()">Arttır</button>
+        <button onclick="azalt()">Azalt</button>
+        <h3>Random</h3>
+        <p id="randomValue"></p>
+        <button onclick="generate()">Random Sayı Üret !</button>
+    </div>
+    <script>
+        function showName() {
+            const name = document.getElementById("nameInput").value;
+            if (name == "") {
+                alert("Değer boş geçilemez");
+                return;
+            }
+            else {
+                document.getElementById("output").innerHTML = "Merhaba " + name + "!";
+            }
+        }
+        function topla() {
+            const sayi1 = Number(document.getElementById("sayi1").value);
+            const sayi2 = Number(document.getElementById("sayi2").value);
+            document.getElementById("result").innerText = "Sonuç:" + (sayi1 + sayi2);
+        }
+        function cıkart() {
+            const sayi1 = Number(document.getElementById("sayi1").value);
+            const sayi2 = Number(document.getElementById("sayi2").value);
+            document.getElementById("result").innerText = "Sonuç:" + (sayi1 - sayi2);
+        }
+        function bolme() {
+            const sayi1 = Number(document.getElementById("sayi1").value);
+            const sayi2 = Number(document.getElementById("sayi2").value);
+            document.getElementById("result").innerText = "Sonuç:" + (sayi1 / sayi2);
+        }
+        function carp() {
+            const sayi1 = Number(document.getElementById("sayi1").value);
+            const sayi2 = Number(document.getElementById("sayi2").value);
+            document.getElementById("result").innerText = "Sonuç:" + (sayi1 * sayi2);
+        }
+        let sayac = 0;
+        function arttir() {
+            sayac++;
+            document.getElementById("count").innerHTML = "<strong style='color:#00c61c; font-size:14px'>" + sayac + "</strong>";
+        }
+        function azalt() {
+            sayac--;
+            document.getElementById("count").innerHTML = "<strong style='color:#b51e1e; font-size:14px'>" + sayac + "</strong>";
+        }
+        function generate() {
+            const rnd = Math.floor(Math.random() * 100);
+            document.getElementById("randomValue").innerHTML = "<strong style='font-size:18px; color:#FF0000 '>" + rnd + "</strong>";
+        }
+        function toplama(sayi1, sayi2) {
+            return sayi1 + sayi2;
+        }
+
+        console.log('Toplama işleminin sonucu --->' + toplama(4, 6));
+
+    </script>
+</body>
+</html>
