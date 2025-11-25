@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36511.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}"
+	ProjectSection(SolutionItems) = preProject
+		bootstrap.css = bootstrap.css
+		Bootstrap.html = Bootstrap.html
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "library", "library", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "images", "images", "{D699D773-D5F0-41D3-848F-F1D0F0C9ECE0}"
+	ProjectSection(SolutionItems) = preProject
+		library\images\23.jpg = library\images\23.jpg
+		library\images\facebook.png = library\images\facebook.png
+		images.jpeg = images.jpeg
+		library\images\instagram.png = library\images\instagram.png
+		library\images\kadın.jpg = library\images\kadın.jpg
+		library\images\linkedin.png = library\images\linkedin.png
+		manset.jpg = manset.jpg
+		library\images\ogrenci.jpg = library\images\ogrenci.jpg
+		library\images\twitter.png = library\images\twitter.png
+		library\images\whatsapp.png = library\images\whatsapp.png
+		library\images\yarın.png = library\images\yarın.png
+		library\images\yür.jpg = library\images\yür.jpg
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D699D773-D5F0-41D3-848F-F1D0F0C9ECE0} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2AD97EA3-5410-46AF-AAB9-AF9EEEDB240E}
+	EndGlobalSection
+EndGlobal
