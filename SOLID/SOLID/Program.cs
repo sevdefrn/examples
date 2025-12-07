@@ -1,6 +1,5 @@
 ﻿#region SINGLE RESPONSIBILTY PRINCIPLE (Tek Sorumluluk)
-// Bir sınıf yanlızca bir sorumluluğa sahip olmalıdır. De
-//Bir sinif yalnizca bir sorumluluga sahip olmalidir. Degigiklik gereksinimi yalnizca bu sorumluluga göre olmalidir.
+// Bir sınıf yanlızca bir sorumluluğa sahip olmalıdır. Değişiklik gereksinimi yanlızca bu sorumluluğa göre olmalıdır.
 //using SOLID.Soliti;
 
 //using SOLID.Soliti;
