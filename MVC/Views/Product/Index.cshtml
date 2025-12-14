@@ -1,0 +1,32 @@
+﻿@using MVC.Models.ViewModels
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model List<Product>
+
+<a class="link-secondary" asp-controller="Product" asp-action="Create">Add New</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Product Name</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td>@product.Id</td>
+                <td>@product.Name</td>
+                <td>
+                    <a href="/Product/Update/@product.Id" class="link-secondary">Update Product</a>|
+                    <a href="/Product/Delete/@product.Id" class="link-danger">Delete</a>
+                </td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+

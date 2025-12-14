@@ -1,0 +1,19 @@
+﻿﻿@using MVC.Models.ViewModels
+@{
+    ViewData["Title"] = "Update";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model Product
+
+<h1>Update</h1>
+
+<form method="post" class="row g-3">
+    <input type="hidden" asp-for="Id" />
+    <div class="col-auto">
+        <label for="inputPassword2" class="visually-hidden">Product name</label>
+        <input asp-for="Name" class="form-control" placeholder="Product name" />
+    </div>
+    <div class="col-auto">
+        <button type="submit" class="btn btn-secondary mb-3">Product name</button>
+    </div>
+</form>
