@@ -3,19 +3,19 @@ using System.ComponentModel.DataAnnotations;
 
 namespace MVC.Models.ViewModels
 {
-    public class StudentViewModels
+    public class SignInViewModels
     {
         [Required(ErrorMessage ="Bu alan boş geçilemez")]
         [DisplayName("Ad Soyad")]
-        public string Name { get; set; }
+        public string FullName { get; set; }
 
         [Required(ErrorMessage ="Bu alan boş geçilemez")]
         [EmailAddress(ErrorMessage ="E-posta formatı doğru değil")]
         [DisplayName("E-posta")]
         public string Email {  get; set; }
 
-        [Range(18,60,ErrorMessage ="Yaş 18 ila 60 arasında olmalıdır")]
-        [DisplayName("Yaş")]
-        public int Age {  get; set; }
+        [Range(18,60,ErrorMessage ="Lütfen şifrenizi giriniz")]
+        [DisplayName("Şifre")]
+        public int Password {  get; set; }
     }
 }

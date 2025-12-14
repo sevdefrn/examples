@@ -3,8 +3,12 @@ using MVC.Models.ViewModels;
 
 namespace MVC.Controllers
 {
-    public class StudentController : Controller
+    public class SignInController : Controller
     {
+        private static List<SignInViewModels>_users = new List<SignInViewModels>
+        {
+            new SignInViewModels{FullName="Sevde FURUNCU", Email="furuncusvd@outlook.com", Password=20251310}
+        };
         public IActionResult Index()
         {
             return View();
@@ -14,7 +18,7 @@ namespace MVC.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult Create(StudentViewModels model)
+        public IActionResult Create(SignInViewModels model)
         {
             if (!ModelState.IsValid)
             {

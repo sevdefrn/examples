@@ -4,7 +4,7 @@
     ViewData["Title"] = "Create";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-@model StudentViewModels
+@model SignInViewModels
 <h1>Öğrenci Ekle</h1>
 
 
@@ -12,10 +12,10 @@
 <form method="post">
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
     <div class="col-3">
-        <label asp-for="Name" class="form-label"></label>
-        <input asp-for="Name" class="form-label">
+        <label asp-for="FullName" class="form-label"></label>
+        <input asp-for="FullName" class="form-label">
         <div id="emailHelp" class="text-danger">
-            <span asp-validation-for="Name" class="text-danger"></span>
+            <span asp-validation-for="FullName" class="text-danger"></span>
         </div>
     </div>
     <div class="col-3">
@@ -26,10 +26,10 @@
         </div>
     </div>
     <div class="col-3">
-        <label asp-for="Age" class="form-label"></label>
-        <input asp-for="Age" class="form-label">
+        <label asp-for="Password" class="form-label"></label>
+        <input asp-for="Password" class="form-label">
         <div id="emailHelp" class="text-danger">
-            <span asp-validation-for="Age" class="text-danger"></span>
+            <span asp-validation-for="Password" class="text-danger"></span>
         </div>
     </div>
     <button type="submit" class="btn btn-secondary">Kaydet</button>
