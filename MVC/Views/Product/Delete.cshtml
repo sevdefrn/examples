@@ -6,11 +6,11 @@
 }
 @model Product
 <h1>Delete</h1>
-<a class="link-secondary" asp-controller="Product" asp-action="Index">Back</a>
+<a class="link-secondary" asp-controller="Product" asp-action="Index">Geri Dön</a>
 <form method="post" class="row g-3">
     <input type="hidden" asp-for="Id" />
     <div class="alert alert-danger" role="alert">
-        Are you sure you want to delete this product? (@Model.Name)
+        Ürünü silmek istediğinizden emin misiniz? (@Model.Name)
     </div>
     <div class="col-auto">
         <button type="submit" class="btn btn-secondary mb-3">Remove Product!</button>

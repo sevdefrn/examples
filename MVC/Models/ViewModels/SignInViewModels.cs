@@ -14,8 +14,8 @@ namespace MVC.Models.ViewModels
         [DisplayName("E-posta")]
         public string Email {  get; set; }
 
-        [Required(ErrorMessage ="Lütfen şifrenizi giriniz")]
+        [Required(ErrorMessage = "Lütfen şifrenizi giriniz")]
         [DisplayName("Şifre")]
-        public double Password {  get; set; }
+        public string Password {  get; set; }
     }
 }
