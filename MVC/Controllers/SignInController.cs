@@ -20,6 +20,7 @@ namespace MVC.Controllers
         }
 
         [HttpPost]
+        //Kullanıcı oluşturma 
         public IActionResult Create(SignInViewModels model)
         {
             if (!ModelState.IsValid)
@@ -38,7 +39,7 @@ namespace MVC.Controllers
             _users.Add(model);
             return RedirectToAction("Index", "Home");
         }
-
+        //Kullanıcı doğrulllama
         [HttpPost]
         public IActionResult Users(string FullName, string Email, string Password)
         {
@@ -53,13 +54,14 @@ namespace MVC.Controllers
 
         public IActionResult Login()
         {
-                return View();
+            return View();
         }
 
         [HttpPost]
+        //Cookie oluştur ve Ekrana Yazdır
         public IActionResult Login(SignInViewModels model)
         {
-            var users = _users.FirstOrDefault(x =>x.FullName==model.FullName && x.Email == model.Email && x.Password == model.Password);
+            var users = _users.FirstOrDefault(x => x.Email == model.Email && x.Password == model.Password);
 
             if (users != null)
             {
@@ -68,9 +70,16 @@ namespace MVC.Controllers
                     Expires = DateTime.Now.AddMinutes(30)
                 };
                 Response.Cookies.Append("FullName", users.FullName, options);
+                TempData["Message"] = $"Hoşgeldiniz {users.FullName}";
                 return RedirectToAction("Index", "Product");
             }
             return View();
+        }
+        //Kullanıcı silme 
+        public IActionResult Logout()
+        {
+            Response.Cookies.Delete("FullName");
+            return RedirectToAction("Index", "Home");
         }
 
     }

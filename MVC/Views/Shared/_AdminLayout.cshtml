@@ -1,11 +1,38 @@
 ﻿@using MVC.Models.ViewModels
-@model SignInViewModels
+@model MVC.Models.ViewModels.SignInViewModels
+
 
 <!DOCTYPE html>
 
+ 
 @{
-    @if (@Model.FullName != null)
-    {
-        
-    }
+    string fullName = Context.Request.Cookies["FullName"];
+}
+
+@if (!string.IsNullOrEmpty(fullName))
+{
+    //Giriş yapılmışsa hoşgeldiniz mesajı göster
+    <div class="fst-italic">
+        <h2>Hoşgeldiniz @fullName</h2>
+    </div>
+}
+//Giriş yapılmamışsa Create sayfasına yönlendir
+else
+{
+    <form asp-controller="SignIn" asp-action="Create">
+        <button type="submit" class="btn btn-secondary mt-3">
+            Giriş Yap
+        </button>
+    </form>
+}
+
+@if (!string.IsNullOrEmpty(fullName))
+{
+    <div class="col-auto mt-3">
+        <form asp-controller="SignIn" asp-action="Create" method="post">
+            <button type="submit" class="btn btn-secondary">
+                Çıkış Yap
+            </button>
+        </form>
+    </div>
 }

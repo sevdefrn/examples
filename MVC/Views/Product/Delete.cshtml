@@ -5,14 +5,15 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @model Product
-<h1>Delete</h1>
-<a class="link-secondary" asp-controller="Product" asp-action="Index">Geri Dön</a>
+<h1>Sil</h1>
+<a class="btn btn-secondary " asp-controller="Product" asp-action="Index">Geri Dön</a>
 <form method="post" class="row g-3">
     <input type="hidden" asp-for="Id" />
     <div class="alert alert-danger" role="alert">
         Ürünü silmek istediğinizden emin misiniz? (@Model.Name)
     </div>
     <div class="col-auto">
-        <button type="submit" class="btn btn-secondary mb-3">Remove Product!</button>
+        <button type="button" class="btn btn-danger">Sil</button>
     </div>
 </form>
+

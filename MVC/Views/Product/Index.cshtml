@@ -5,14 +5,18 @@
 }
 @model List<Product>
 
+<div class="btn-group" role="group" aria-label="Basic mixed styles example">
 
-<a class="link-secondary" asp-controller="Product" asp-action="Create">Add New</a>
+    <a asp-controller="Product" asp-action="Create" type="button" class="btn btn-secondary">Ürün ekle</a>
+    <a asp-controller="Product" asp-action="Delete" type="button" class="btn btn-danger">Tümünü Sil</a>
+</div>
+
 <table class="table">
     <thead>
         <tr>
             <th scope="col">Id</th>
-            <th scope="col">Product Name</th>
-            <th scope="col">Actions</th>
+            <th scope="col">Ürün Adı</th>
+            <th scope="col">İşlemler</th>
         </tr>
     </thead>
     <tbody>
@@ -22,8 +26,8 @@
                 <td>@product.Id</td>
                 <td>@product.Name</td>
                 <td>
-                    <a href="/Product/Update/@product.Id" class="link-secondary">Update Product</a>|
-                    <a href="/Product/Delete/@product.Id" class="link-danger">Delete</a>
+                    <a href="/Product/Update/@product.Id" type="button" class="btn btn-secondary">Güncelle</a>  
+                    <a href="/Product/Delete/@product.Id" type="button" class="btn btn-danger">Sil</a>
                 </td>
             </tr>
         }
