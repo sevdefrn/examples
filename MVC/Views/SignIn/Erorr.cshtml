@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewData["Title"] = "Erorr";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1></h1>
+<form method="post">
+    <div class="modal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Hata</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Kullanıcı bulunamadı. Tekrar deneyiniz!!</p>
+                </div>
+                <div class="modal-footer">
+                    <a asp-controller="SignIn" asp-action="Create" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Geri Dön</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+    
+

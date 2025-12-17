@@ -15,15 +15,13 @@
          style="width: 220px; height: 100vh; position: fixed; left: 0; top: 0; background-color: #e1bee7;">
 
         <!-- LOGO -->
-
         <a class="navbar-brand d-flex align-items-center mb-4" href="/">
             <img src="~/images/logo.jpg" width="35" height="35" class="me-2 rounded" />
             <span class="fw-bold" style="color: #000000;">Alara Pastane</span>
         </a>
 
         <!-- MENÜ -->
-
-        <partial name="_AdminLayout" model="new MVC.Models.ViewModels.SignInViewModels()"/>
+        <partial name="_AdminLayout" model="new MVC.Models.ViewModels.SignInViewModels()" /> 
 
         <ul class="navbar-nav flex-grow-1">
             <li class="nav-item">
@@ -31,6 +29,9 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link text-dark" asp-controller="Home" asp-action="Privacy">Hakkımızda</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark" asp-controller="SignIn" asp-action="Create">Ürünlerimiz</a>
             </li>
         </ul>
         <div class="socialmedia">

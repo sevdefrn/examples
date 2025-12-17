@@ -5,48 +5,27 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @model SignInViewModels
+
 <h1></h1>
 
-@* GİRİŞ EKRANI *@
-<div class="d-flex justify-content-center align-items-center"
-     style="min-height:100vh;">
+<form method="post">
+    <div class="mb-3">
+        <label class="form-label">Kullanıcı Adı</label>
+        <input class="form-control" name="userName">
+    </div>
 
-    <form asp-controller="Product" asp-action="Index" method="post">
-        @Html.AntiForgeryToken()
+    <div class="mb-3">
+        <label class="form-label">Şifre</label>
+        <input type="password" class="form-control" name="Password">
+    </div>
 
-        <div class="card shadow"
-             style="width:22rem; background-color:rgba(225,190,231,0.95); border-radius:12px;">
+    <div class="mb-3 form-check">
+        <label>
+            <input type="checkbox" name="rememberMe" />
+            Beni Hatırla
+        </label>
+    </div>
 
-            <div class="card-body">
-                <h5 class="card-title text-center mb-4">Kullanıcı Girişi</h5>
-
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-
-                <div class="mb-3">
-                    <label asp-for="FullName" class="form-label"></label>
-                    <input asp-for="FullName" class="form-control" />
-                    <span asp-validation-for="FullName" class="text-danger"></span>
-                </div>
-
-                <div class="mb-3">
-                    <label asp-for="Email" class="form-label"></label>
-                    <input asp-for="Email" class="form-control" />
-                    <span asp-validation-for="Email" class="text-danger"></span>
-                </div>
-
-                <div class="mb-3">
-                    <label asp-for="Password" class="form-label"></label>
-                    <input asp-for="Password" type="password" class="form-control" />
-                    <span asp-validation-for="Password" class="text-danger"></span>
-                </div>
-
-                <button type="submit" class="btn btn-secondary w-100 mt-3">
-                    Giriş Yap
-                </button>
-            </div>
-        </div>
-    </form>
-
-</div>
-
+    <button type="submit" class="btn btn-primary">Giriş Yap</button>
+</form>
 

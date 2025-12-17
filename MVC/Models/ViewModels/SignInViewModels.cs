@@ -5,17 +5,14 @@ namespace MVC.Models.ViewModels
 {
     public class SignInViewModels
     {
-        [Required(ErrorMessage ="Bu alan boş geçilemez")]
-        [DisplayName("Ad Soyad")]
-        public string FullName { get; set; }
-
-        [Required(ErrorMessage ="Bu alan boş geçilemez")]
-        [EmailAddress(ErrorMessage ="E-posta formatı doğru değil")]
-        [DisplayName("E-posta")]
-        public string Email {  get; set; }
+        [Required(ErrorMessage = "Bu alan boş geçilemez")]
+        [DisplayName("Kullanıcı Adı")]
+        public string userName { get; set; }
 
         [Required(ErrorMessage = "Lütfen şifrenizi giriniz")]
         [DisplayName("Şifre")]
-        public string Password {  get; set; }
+        public string Password {  get; set; } 
+
+        public bool RememberMe { get; set; }
     }
 }

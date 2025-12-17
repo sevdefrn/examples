@@ -6,81 +6,63 @@ namespace MVC.Controllers
 {
     public class SignInController : Controller
     {
-        private static List<SignInViewModels> _users = new List<SignInViewModels>
+        private static List<SignInViewModels> users = new List<SignInViewModels>
         {
-            new SignInViewModels{FullName="Sevde FURUNCU", Email="furuncusvd@outlook.com", Password="131006"}
+            new SignInViewModels{userName="SevdeFrn" , Password="131006"}
         };
+
         public IActionResult Index()
         {
-            return View(_users);
+            return View();
         }
         public IActionResult Create()
         {
             return View();
         }
-
+        //Kullanıcı bul ve cookies oluştur ve Kullanıcı varsa hoşgeldiniz mesajı göster. Kullanıcı yoksa bilgileri kontrol et
         [HttpPost]
-        //Kullanıcı oluşturma 
-        public IActionResult Create(SignInViewModels model)
+        public IActionResult Create(SignInViewModels model , bool rememberMe)
         {
-            if (!ModelState.IsValid)
+            var user = users.FirstOrDefault(x => x.userName == model.userName && x.Password == model.Password);
+            if (user != null)
             {
-                return View(model);
-            }
-            return RedirectToAction("Index", "Home");
-        }
-
-        public IActionResult Users(SignInViewModels model)
-        {
-            if (!ModelState.IsValid)
-            {
-                return View(model);
-            }
-            _users.Add(model);
-            return RedirectToAction("Index", "Home");
-        }
-        //Kullanıcı doğrulllama
-        [HttpPost]
-        public IActionResult Users(string FullName, string Email, string Password)
-        {
-            var users = _users.FirstOrDefault(x => x.FullName == FullName && x.Email == Email && x.Password == Password);
-            if (users != null)
-            {
-                return RedirectToAction("Index", "Product");
-            }
-            return RedirectToAction("Index", "Home");
-
-        }
-
-        public IActionResult Login()
-        {
-            return View();
-        }
-
-        [HttpPost]
-        //Cookie oluştur ve Ekrana Yazdır
-        public IActionResult Login(SignInViewModels model)
-        {
-            var users = _users.FirstOrDefault(x => x.Email == model.Email && x.Password == model.Password);
-
-            if (users != null)
-            {
-                CookieOptions options = new CookieOptions
+                //Kullanıcı bulundu, cookie oluştur
+                Response.Cookies.Append(user.userName, "true", new CookieOptions
                 {
-                    Expires = DateTime.Now.AddMinutes(30)
-                };
-                Response.Cookies.Append("FullName", users.FullName, options);
-                TempData["Message"] = $"Hoşgeldiniz {users.FullName}";
+                    Expires = rememberMe
+                    ? DateTimeOffset.Now.AddMinutes(60)   // BENİ HATIRLA
+                    : DateTimeOffset.Now.AddMinutes(20)
+                });
+                ViewBag.Message = "Hoşgeldiniz " + model.userName;
+                return RedirectToAction("Index", "Product");
+
+            }
+            //KUllanıcı varsa COOkies hoçgeldiniz mesajı göster
+            if (Request.Cookies[model.userName] != null)
+            {
+                ViewBag.Message = "Hoşgeldiniz " + model.userName;
                 return RedirectToAction("Index", "Product");
             }
             return View();
         }
-        //Kullanıcı silme 
-        public IActionResult Logout()
+
+        [HttpPost]
+        public IActionResult Erorr()
         {
-            Response.Cookies.Delete("FullName");
-            return RedirectToAction("Index", "Home");
+            //Kullanıcı bulanamadı ve yanılış giriş yaptı
+            ViewBag.Message = "Kullanıcı adı veya şifre yanlış.";
+            return RedirectToAction("Erorr", "SignIn");
         }
 
+        //Kullanıcı varsa cookies çıkılı yap
+        [HttpPost]
+        public IActionResult Logout(string userName)
+        {
+            if (Request.Cookies[userName] != null)
+            {
+                Response.Cookies.Delete(userName);
+            }
+            return RedirectToAction("Index", "Home");
+        }
     }
 }
