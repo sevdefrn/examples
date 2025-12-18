@@ -7,61 +7,67 @@ namespace MVC.Controllers
     public class SignInController : Controller
     {
         private static List<SignInViewModels> users = new List<SignInViewModels>
-        {
-            new SignInViewModels{userName="SevdeFrn" , Password="131006"}
-        };
+    {
+        new SignInViewModels { userName = "SevdeFrn", Password = "131006" }
+    };
 
         public IActionResult Index()
         {
             return View();
         }
+
+        [HttpGet]
         public IActionResult Create()
         {
+            // Cookie varsa otomatik giriş
+            if (Request.Cookies["LoginUser"] != null)
+            {
+                return RedirectToAction("Index", "Product");
+            }
+
             return View();
         }
-        //Kullanıcı bul ve cookies oluştur ve Kullanıcı varsa hoşgeldiniz mesajı göster. Kullanıcı yoksa bilgileri kontrol et
+
+        // Kullanıcı giriş kontrolü ve rbeni hatırla kısmı
         [HttpPost]
-        public IActionResult Create(SignInViewModels model , bool rememberMe)
+        public IActionResult Create(SignInViewModels model)
         {
-            var user = users.FirstOrDefault(x => x.userName == model.userName && x.Password == model.Password);
+            var user = users.FirstOrDefault(x =>
+                x.userName == model.userName &&
+                x.Password == model.Password);
+
             if (user != null)
             {
-                //Kullanıcı bulundu, cookie oluştur
-                Response.Cookies.Append(user.userName, "true", new CookieOptions
+                Response.Cookies.Append("LoginUser", user.userName, new CookieOptions
                 {
-                    Expires = rememberMe
-                    ? DateTimeOffset.Now.AddMinutes(60)   // BENİ HATIRLA
-                    : DateTimeOffset.Now.AddMinutes(20)
+                    Expires = model.RememberMe
+                    //beni hatırla buttonuna basınıca 60 dakkika
+                        ? DateTimeOffset.Now.AddMinutes(60)   
+                        //buttona basılmassa 20 dakika
+                        : DateTimeOffset.Now.AddMinutes(20),
+                    HttpOnly = true
                 });
-                ViewBag.Message = "Hoşgeldiniz " + model.userName;
-                return RedirectToAction("Index", "Product");
 
-            }
-            //KUllanıcı varsa COOkies hoçgeldiniz mesajı göster
-            if (Request.Cookies[model.userName] != null)
-            {
-                ViewBag.Message = "Hoşgeldiniz " + model.userName;
                 return RedirectToAction("Index", "Product");
             }
+
+            TempData["Message"] = "Kullanıcı adı veya şifre yanlış.";
+            return RedirectToAction("Erorr");
+        }
+
+        //Kullanıcı yanlış girdiğinde error mesajı
+        [HttpGet]
+        public IActionResult Erorr()
+        {
+            ViewBag.Message = TempData["Message"];
             return View();
         }
 
+        // Kullanıcı varsa çıkış buttonu
         [HttpPost]
-        public IActionResult Erorr()
+        public IActionResult Logout()
         {
-            //Kullanıcı bulanamadı ve yanılış giriş yaptı
-            ViewBag.Message = "Kullanıcı adı veya şifre yanlış.";
-            return RedirectToAction("Erorr", "SignIn");
-        }
-
-        //Kullanıcı varsa cookies çıkılı yap
-        [HttpPost]
-        public IActionResult Logout(string userName)
-        {
-            if (Request.Cookies[userName] != null)
-            {
-                Response.Cookies.Delete(userName);
-            }
+            Response.Cookies.Delete("LoginUser");
             return RedirectToAction("Index", "Home");
         }
     }

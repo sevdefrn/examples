@@ -26,9 +26,13 @@ namespace MVC.Controllers
         };
         private static int _idCounter = 16;
 
-        //Listeleme
+        // cookies yoksa ürün sayfasına girmesin
         public IActionResult Index()
         {
+            if (Request.Cookies["LoginUser"] == null)
+            {
+                return RedirectToAction("Create", "SignIn");
+            }
             return View(_products);
         }
 

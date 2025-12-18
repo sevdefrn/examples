@@ -5,16 +5,26 @@
 @model MVC.Models.ViewModels.SignInViewModels
 
 @{
-    if (@Model.userName != null)
-    {
-        <div class="">
-            <h2>Hoşgeldiniz @Model.userName</h2>
-        </div>
-        <a asp-controller="Home" asp-action="Index" type="button" class="btn btn-secondary">Çıkış</a>
+    var userName = Context.Request.Cookies["LoginUser"];
+}
 
+@if (string.IsNullOrEmpty(userName))
+{
+    //Cookise yoksa giriş yap butonu göster
+    <a asp-controller="SignIn" asp-action="Create" class="btn btn-secondary">
+        Giriş Yap
+    </a>
+}
+else
+{
+    //Cookise varsa kullanıcı adını göster ve çıkış butonu ekle
+    <div class="fst-italic">
+        <h6 style="color: #000000;">Hoşgeldiniz '@userName'</h6>
+    </div>
 
-    }
-    {
-        <a asp-controller="SignIn" asp-action="Create" type="button" class="btn btn-secondary">Giriş yap</a>
-    }
+    <form asp-controller="SignIn" asp-action="Logout" method="post">
+        <button type="submit" class="btn btn-secondary">
+            Çıkış
+        </button>
+    </form>
 }
