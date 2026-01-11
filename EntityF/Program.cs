@@ -46,12 +46,12 @@ var products = new List<Product>
 var urunler = from q in products where (q.Price > 1000) select q;
 foreach (var item in urunler)
 {
-    Console.WriteLine($"Linq ----> {item.Name}");
+    Console.WriteLine($"Linq ----> {item.Name} Fiyat:{item.Price}");
 }
 
 #endregion
 
 #region LAMBDA
 var lamdaurunler = products.Where(x => x.Price > 1000).ToList();
-lamdaurunler.ForEach(x => Console.WriteLine($"Lamda -----> {x.Name}"));
+lamdaurunler.ForEach(x => Console.WriteLine($"Lamda -----> {x.Name}  Fiyat: {x.Price}"));
 #endregion
