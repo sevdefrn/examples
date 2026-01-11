@@ -1,0 +1,40 @@
+﻿@using MVC_Project.Models
+@{
+    ViewData["Title"] = "Home Page";
+}
+@model List<Product>
+
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<div>
+    <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Fiyatı</th>
+                    <th scope="col">Kategori</th>
+                    <th scope="col">Marka</th>
+                </tr>
+            </thead>
+        <thead>
+            @{
+                foreach (var product in Model)
+                {
+                    <tr>
+                        <th scope="col">@product.Id</th>
+                        <th scope="col">@product.Name</th>
+                        <th scope="col">@product.Price</th>
+                        <th scope="col">@product.Category?.Name</th>
+                        <th scope="col">@product.Brand?.Name</th>
+                    </tr>
+                }
+            }
+        </thead>
+
+    </table>
+</div>
