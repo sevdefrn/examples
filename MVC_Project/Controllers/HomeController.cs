@@ -24,7 +24,7 @@ namespace MVC_Project.Controllers
             List<Product> productList = _projectContext.Products
                 .Include(x => x.Category)
                 .Include(x => x.Brand)
-                .Where(x => x.Price > 10 /*&& x.Name.Contains("a")*/)
+                .Where(x => x.Price > 10 && x.Name.Contains("a"))
                 .Skip(0).Take(10)
                 .OrderBy(x => x.Name)
                 .ToList();
