@@ -20,11 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="wwwroot\images\logo.jpg" />
+    <None Include="wwwroot\img\logo.jpg" />
   </ItemGroup>
 
 </Project>

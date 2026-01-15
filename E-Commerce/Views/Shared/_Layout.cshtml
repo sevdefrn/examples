@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using E_Commerce.Models
+<!DOCTYPE html>
 <html lang="tr">
 <head>
     <meta charset="utf-8" />
@@ -17,48 +18,9 @@
             }
 
             header {
-                margin: 0;
-                padding: 0;
                 background-color: #EAF7F2;
+                margin-bottom: 20px;
             }
-
-            nav.navbar {
-                margin-bottom: 0 !important;
-                padding-bottom: 0;
-                border-bottom: none !important;
-                background-color: #ffffff !important; /* body ile aynı */
-            }
-
-            main, .container, .container-fluid {
-                margin-top: 0 !important;
-                padding-top: 0 !important;
-            }
-
-            /* Hover dropdown */
-            nav .dropdown:hover > .dropdown-menu {
-                display: block;
-                margin-top: 0;
-            }
-
-            .navbar .nav-link {
-                color: #000000;
-                font-weight: 600;
-            }
-
-            .dropdown-menu {
-                border-radius: 0;
-            }
-        </style>
-        <style>
-            nav ul li {
-                cursor: pointer;
-                border-bottom: 3px solid transparent;
-            }
-
-                nav ul li:hover {
-                    border-bottom: 3px solid #000000;
-                    background-color: #f8f9fa;
-                }
         </style>
         <div class="container-fluid py-3">
             <div class="row align-items-center">
@@ -66,7 +28,7 @@
                 <!-- LOGO -->
                 <div class="col-md-3">
                     <img src="~/images/logo.jpg" width="35" height="35" class="me-2 rounded" />
-                    <a class="navbar-brand fw-bold fs-3" href="/" style="color:#000000;">
+                    <a class="navbar-brand fw-bold fs-3" href="/" style="color:#800020;">
                         Alara Pastane
                     </a>
                 </div>
@@ -75,130 +37,22 @@
                 <div class="col-md-6">
                     <form class="d-flex" role="search">
                         <input class="form-control me-2" type="search" placeholder="Ara" />
-                        <button class="btn btn-outline-dark" type="submit">Ara</button>
+                        <button class="btn btn-outline-secondary" style="color:#800020" type="submit">Ara</button>
                     </form>
                 </div>
 
                 <!-- USER -->
                 <div class="col-md-3 d-flex justify-content-end gap-2">
-                    <button class="btn btn-outline-secondary rounded-pill">
+                    <button class="btn btn-outline-secondary rounded-pill" style="color:#800020">
                         Giriş Yap
                     </button>
-                    <button class="btn btn-secondary rounded-pill">
+                    <button class="btn btn-outline-secondary rounded-pill" style="color:#800020">
                         Sepetim
                     </button>
                 </div>
 
             </div>
         </div>
-        <nav class="border-top">
-            <ul class="nav justify-content-center fw-semibold">
-
-                    <ul class="nav justify-content-center fw-semibold">
-
-                        <!-- PASTALAR -->
-                        <li class="nav-item dropdown px-3 py-2">
-                            <a class="nav-link text-dark" href="#">
-                                Pastalar
-                            </a>
-
-                            <!-- ALT MENÜ (AÇILAN KISIM) -->
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Doğum Günü Pastaları</a></li>
-                                <li><a class="dropdown-item" href="#">Nişan Pastaları</a></li>
-                                <li><a class="dropdown-item" href="#">Özel Tasarım</a></li>
-                            </ul>
-                        </li>
-
-                        <!-- KEKLER -->
-                        <li class="nav-item dropdown px-3 py-2">
-                            <a class="nav-link text-dark" href="#">
-                                Kekler
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Islak Kek</a></li>
-                                <li><a class="dropdown-item" href="#">Meyveli Kek</a></li>
-                            </ul>
-                        </li>
-
-                        <li class="nav-item dropdown px-3 py-2">
-                            <a class="nav-link text-dark" href="#">
-                                Kurabiyeler
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Islak Kek</a></li>
-                                <li><a class="dropdown-item" href="#">Meyveli Kek</a></li>
-                            </ul>
-                        </li>
-
-                        <li class="nav-item dropdown px-3 py-2">
-                            <a class="nav-link text-dark" href="#">
-                                Cheesecake
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Islak Kek</a></li>
-                                <li><a class="dropdown-item" href="#">Meyveli Kek</a></li>
-                            </ul>
-                        </li>
-
-
-                        <li class="nav-item dropdown px-3 py-2">
-                            <a class="nav-link text-dark" href="#">
-                                Cupcake
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Islak Kek</a></li>
-                                <li><a class="dropdown-item" href="#">Meyveli Kek</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown px-3 py-2">
-                            <a class="nav-link text-dark" href="#">
-                                Makaron
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Islak Kek</a></li>
-                                <li><a class="dropdown-item" href="#">Meyveli Kek</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown px-3 py-2">
-                            <a class="nav-link text-dark" href="#">
-                                Sufle
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Islak Kek</a></li>
-                                <li><a class="dropdown-item" href="#">Meyveli Kek</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown px-3 py-2">
-                            <a class="nav-link text-dark" href="#">
-                                Ekler
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Islak Kek</a></li>
-                                <li><a class="dropdown-item" href="#">Meyveli Kek</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown px-3 py-2">
-                            <a class="nav-link text-dark" href="#">
-                                Profiterol
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Islak Kek</a></li>
-                                <li><a class="dropdown-item" href="#">Meyveli Kek</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown px-3 py-2">
-                            <a class="nav-link text-dark" href="#">
-                                Çikolata
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Islak Kek</a></li>
-                                <li><a class="dropdown-item" href="#">Meyveli Kek</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-            </ul>
-        </nav>
     </header>
     <div class="container">
         <main role="main" class="pb-3">
@@ -207,9 +61,39 @@
     </div>
 
     <footer class="border-top footer text-muted">
-        <div class="container">
+        <div class="container" style="color:#800020">
             &copy; 2026 - Alara Pastene - <a asp-area="" asp-controller="Home" asp-action="Privacy">Gizilik</a>
         </div>
+        <div class="socialmedia">
+            <ul style="list-style:none; padding:0; margin:0; display:flex; gap:10px; justify-content:flex-end;">
+                <li>
+                    <a href="https://www.facebook.com" target="_blank">
+                        <img src="~/img/facebook.png" style="width:25px; height:25px;" />
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com" target="_blank">
+                        <img src="~/img/instagram.png" style="width:25px; height:25px;" />
+                    </a>
+                </li>
+                <li>
+                    <a href="https://tr.linkedin.com" target="_blank">
+                        <img src="~/img/linkedin.png" style="width:25px; height:25px;" />
+                    </a>
+                </li>
+                <li>
+                    <a href="https://x.com/?lang=tr" target="_blank">
+                        <img src="~/img/twitter.png" style="width:25px; height:25px;" />
+                    </a>
+                </li>
+                <li>
+                    <a href="https://web.whatsapp.com" target="_blank">
+                        <img src="~/img/whatsapp.png" style="width:25px; height:25px;" />
+                    </a>
+                </li>
+            </ul>
+        </div>
+
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

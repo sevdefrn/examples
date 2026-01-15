@@ -1,5 +1,93 @@
-﻿@{
+﻿@using E_Commerce.Models
+@{
     ViewData["Title"] = "Home Page";
 }
+@model (List<Category>, List<Product>)
+
+<div class="d-flex justify-content-start gap-3 mb-4">
+    <div class="dropdown">
+        <!-----Kategori listsei------>
+        <button class="btn btn-white dropdown-toggle float-start" style="color:#800020" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Kategoriler
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+            @{
+                var categories = Model.Item1
+                .Where(x => string.IsNullOrEmpty(x.ParentId) && x.IsActive).ToList();
+            }
+
+            @foreach (var mainCategory in categories)
+            {
+                <!------Kategori içini alt kategoriler  ------>
+                <a class="btn btn-link w-100 text-start"
+                   asp-controller="Home"
+                   asp-action="List"
+                   asp-route-categoryId="@mainCategory.Id"
+                   style="color:#800020;">
+                    @mainCategory.Name
+                </a>
+
+                @foreach (var item in Model.Item1
+                            .Where(x => x.ParentId == mainCategory.Id.ToString()))
+                {
+                    <!------Kategori içini alt kategoriye bağlı ürünlere bağlantısı ------>
+                    <a class="dropdown-item"
+                       asp-controller="Home"
+                       asp-action="List"
+                       asp-route-categoryId="@item.Id"
+                       style="padding-left: 2rem;">
+                        @item.Name
+                    </a>
+                }
+            }
+        </div>
+    </div>
+</div>
 
 
+
+@{
+    var products = Model.Item2;
+}
+
+<div class="row">
+    @foreach (var item in products)
+    {
+        <!--------ürünlerin card görüntüsü ---------->
+        var img = item.ProductImages
+        .FirstOrDefault(x => x.IsCurrent && x.IsActive);
+
+        <div class="col-md-3 mb-4">
+            <!---ürün detayı sayfasına yönlendirme---->
+            <a asp-controller="Home"
+               asp-action="Detail"
+               asp-route-id="@item.Id"
+               class="text-decoration-none text-dark">
+
+                <div class="card product-card h-100">
+
+                    <!-- Ürün Görseliii -->
+                    <img src="@(img.ImageUrl)"
+                         class="card-img-top product-img"
+                         alt="@item.Name" />
+
+                    <div class="card-body">
+
+                        <h6 class="product-title">
+                            @item.Name
+                        </h6>
+                        <h6 class="product-title">
+                            @item.ShortDescription
+                        </h6>
+                        <!-- Ürün Fiyatıı -->
+                        <div class="price">
+                            @item.Price.ToString("N0") ₺
+                        </div>
+                    </div>
+
+                </div>
+            </a>
+
+        </div>
+    }
+</div>

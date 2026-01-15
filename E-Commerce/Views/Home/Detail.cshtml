@@ -1,0 +1,49 @@
+﻿@using E_Commerce.Models
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@model E_Commerce.Models.Product
+
+
+@{
+    var products = Model;
+}
+
+
+@{
+    var image = Model.ProductImages.FirstOrDefault(x => x.IsActive);
+    var color = Model.ProductColors ?? new List<ProductColor>();
+    var size = Model.ProductSizes ?? new List<ProductSize>();
+    var propert = Model.ProductProperties ?? new List<ProductProperty>();
+
+
+    <img src="@image?.ImageUrl" alt="(@Model.Name)" />
+}
+
+@foreach (var p in propert)
+{
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h6 class="card-subtitle mb-2 text-body-secondary">Açıklama</h6>
+            <p class="card-text">Ürün Adı: @(Model.Name)</p>
+            @foreach (var c in color)
+            {
+                <p class="card-text">Ürün Rengi: @(c.ColorId)</p>
+            }
+            @foreach (var s in size)
+            {
+                <p class="card-text">Ürün Bedeni: @(s.SizeId)</p>
+            }
+            <h6 class="card-subtitle mb-2 text-body-secondary">Özellik ve Açıklaması</h6>
+            <p class="card-text">Ürün Bedeni:@(p.Attr)</p>
+            <p class="card-text">Ürün Bedeni:@(p.Value)</p>
+            <p class="card-text">Ürün Bedeni:@(Model.Description)</p>
+            <a href="#" class="card-link">Tümünü Gör</a>
+        </div>
+    </div>
+}
+
+
+
+
