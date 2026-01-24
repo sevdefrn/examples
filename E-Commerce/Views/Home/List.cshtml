@@ -44,8 +44,29 @@
                         </div>
                     </div>
 
+                    <!-- SEPETE EKLE BUTONU -->
+                    <form asp-controller="Cart"
+                          asp-action="Add"
+                          method="post"
+                          class="mt-2">
+
+                        <input type="hidden" name="productId" value="@item.Id" />
+
+                        <button type="submit"
+                                class="btn w-100"
+                                style="
+                                background-color:#800020;
+                                color:#FFF3E6;
+                                border-radius:20px;
+                                font-weight:600;
+                            ">
+                            Sepete Ekle
+                        </button>
+                    </form>
+
                 </div>
             </a>
+
 
         </div>
     }

@@ -23,23 +23,83 @@
 
 @foreach (var p in propert)
 {
-    <div class="card" style="width: 18rem;">
+    <div class="card shadow-sm mb-4" style="max-width: 22rem; border-radius:16px;">
         <div class="card-body">
-            <h6 class="card-subtitle mb-2 text-body-secondary">Açıklama</h6>
-            <p class="card-text">Ürün Adı: @(Model.Name)</p>
-            @foreach (var c in color)
+
+            <!-- SEPETE EKLE -->
+            <form asp-controller="Cart"
+                  asp-action="Add"
+                  method="post"
+                  class="mb-3">
+
+                <input type="hidden" name="productId" value="@p.Id" />
+
+                <button type="submit"
+                        class="btn w-100"
+                        style="
+                                    background-color:#800020;
+                                    color:#FFF3E6;
+                                    border-radius:20px;
+                                    font-weight:600;
+                                ">
+                    🛒 Sepete Ekle
+                </button>
+            </form>
+
+            <!-- AÇIKLAMA -->
+            <h6 style="
+                        font-weight:700;
+                        color:#800020;
+                        margin-bottom:10px;
+                    ">
+                Açıklama
+            </h6>
+
+            <p style="margin-bottom:6px;">
+                <strong>Ürün:</strong> @Model.Name
+            </p>
+
+            <!-- RENKLER -->
+            @if (color.Any())
             {
-                <p class="card-text">Ürün Rengi: @(c.ColorId)</p>
+                <p style="margin-bottom:6px;">
+                    <strong>Renk:</strong>
+                    @string.Join(", ", color.Select(x => x.ColorId))
+                </p>
             }
-            @foreach (var s in size)
+
+            <!-- BEDENLER -->
+            @if (size.Any())
             {
-                <p class="card-text">Ürün Bedeni: @(s.SizeId)</p>
+                <p style="margin-bottom:6px;">
+                    <strong>Boyut:</strong>
+                    @string.Join(", ", size.Select(x => x.SizeId))
+                </p>
             }
-            <h6 class="card-subtitle mb-2 text-body-secondary">Özellik ve Açıklaması</h6>
-            <p class="card-text">Ürün Bedeni:@(p.Attr)</p>
-            <p class="card-text">Ürün Bedeni:@(p.Value)</p>
-            <p class="card-text">Ürün Bedeni:@(Model.Description)</p>
-            <a href="#" class="card-link">Tümünü Gör</a>
+
+            <hr />
+
+            <!-- ÖZELLİKLER -->
+            <h6 style="
+                        font-weight:700;
+                        color:#800020;
+                        margin-bottom:8px;
+                    ">
+                Özellikler
+            </h6>
+
+            <p style="margin-bottom:4px;">
+                <strong>İçerik:</strong> @p.Attr
+            </p>
+
+            <p style="margin-bottom:4px;">
+                <strong>Oran:</strong> @p.Value
+            </p>
+
+            <p style="margin-top:8px; color:#555;">
+                @Model.Description
+            </p>
+
         </div>
     </div>
 }

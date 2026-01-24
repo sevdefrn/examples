@@ -42,7 +42,7 @@ namespace MVC.Controllers
                 {
                     Expires = model.RememberMe
                     //beni hatırla buttonuna basınıca 60 dakkika
-                        ? DateTimeOffset.Now.AddMinutes(60)   
+                        ? DateTimeOffset.Now.AddMinutes(60)
                         //buttona basılmassa 20 dakika
                         : DateTimeOffset.Now.AddMinutes(20),
                     HttpOnly = true

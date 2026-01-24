@@ -18,7 +18,7 @@
             }
 
             header {
-                background-color: #EAF7F2;
+                background-color: #d1e7dd;
                 margin-bottom: 20px;
             }
         </style>
@@ -27,7 +27,7 @@
 
                 <!-- LOGO -->
                 <div class="col-md-3">
-                    <img src="~/images/logo.jpg" width="35" height="35" class="me-2 rounded" />
+                    <img src="~/img/logo.jpg" width="35" height="35" class="me-2 rounded" />
                     <a class="navbar-brand fw-bold fs-3" href="/" style="color:#800020;">
                         Alara Pastane
                     </a>
@@ -43,9 +43,8 @@
 
                 <!-- USER -->
                 <div class="col-md-3 d-flex justify-content-end gap-2">
-                    <button class="btn btn-outline-secondary rounded-pill" style="color:#800020">
-                        Giriş Yap
-                    </button>
+                    <partial name="_AdminLayout" model="new E_Commerce.Models.SignIn()" />
+
                     <button class="btn btn-outline-secondary rounded-pill" style="color:#800020">
                         Sepetim
                     </button>

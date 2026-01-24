@@ -1,0 +1,29 @@
+﻿@{
+    Layout = null;
+}
+@model E_Commerce.Models.SignIn
+
+@{
+    var userName = Context.Request.Cookies["LoginUser"];
+}
+
+@if (string.IsNullOrEmpty(userName))
+{
+    //Cookise yoksa giriş yap butonu göster
+    <a asp-controller="SignIn" asp-action="Create" class="btn btn-outline-secondary rounded-pill" style="color:#800020">
+        Giriş Yap
+    </a>
+}
+else
+{
+    //Cookise varsa kullanıcı adını göster ve çıkış butonu ekle
+    <div class="fst-italic">
+        <h6 style="color: #000000;">Hoşgeldiniz '@userName'</h6>
+    </div>
+
+    <form asp-controller="SignIn" asp-action="Logout" method="post">
+        <button type="submit" class="btn btn-secondary">
+            Çıkış
+        </button>
+    </form>
+}

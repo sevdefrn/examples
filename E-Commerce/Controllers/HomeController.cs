@@ -58,5 +58,18 @@ namespace E_Commerce.Controllers
             }
             return View(product);
         }
+
+        public IActionResult Card(int id)
+        {
+            var product = _projetContext.Products
+                .Include(p => p.ProductSizes)
+                .Include(p => p.ProductColors)
+                .FirstOrDefault(x => x.Id == id);
+            if (product == null)
+            {
+                return NotFound();
+            }
+            return View(product);
+        }
     }
 }
