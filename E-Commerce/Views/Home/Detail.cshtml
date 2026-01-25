@@ -45,6 +45,12 @@
                     🛒 Sepete Ekle
                 </button>
             </form>
+            <h4>
+                <div class="price">
+                    @Model.Price.ToString("C2") 
+                </div>
+            </h4>
+            
 
             <!-- AÇIKLAMA -->
             <h6 style="
@@ -79,26 +85,30 @@
 
             <hr />
 
-            <!-- ÖZELLİKLER -->
-            <h6 style="
-                        font-weight:700;
-                        color:#800020;
-                        margin-bottom:8px;
-                    ">
-                Özellikler
-            </h6>
 
-            <p style="margin-bottom:4px;">
-                <strong>İçerik:</strong> @p.Attr
-            </p>
+            <div coll="">
+                <!-- ÖZELLİKLER -->
+                <h6 style="
+                            font-weight:700;
+                            color:#800020;
+                            margin-bottom:8px;
+                        ">
+                    Özellikler
+                </h6>
 
-            <p style="margin-bottom:4px;">
-                <strong>Oran:</strong> @p.Value
-            </p>
+                <p style="margin-bottom:4px;">
+                    <strong>İçerik:</strong> @p.Attr
+                </p>
 
-            <p style="margin-top:8px; color:#555;">
-                @Model.Description
-            </p>
+                <p style="margin-bottom:4px;">
+                    <strong>Oran:</strong> @p.Value
+                </p>
+
+                <p style="margin-top:8px; color:#555;">
+                    @Model.Description
+                </p>
+            </div>
+            
 
         </div>
     </div>
