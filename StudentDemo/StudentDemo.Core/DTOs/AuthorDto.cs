@@ -1,0 +1,38 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace StudentDemo.Core.DTOs
+{
+    public class AuthorDto
+    {
+        public int Id { get; set; }
+        public string Name { get; set; } = string.Empty;
+        public string? Country { get; set; }
+        public DateTime? CreatedAt { get; set; }
+        public int BookCount { get; set; }
+    }
+
+    public class AuthorWithBooksDto
+    {
+        public int Id { get; set; }
+        public string Name { get; set; } = string.Empty;
+        public string? Country { get; set; }
+        public DateTime? CreatedAt { get; set; }
+        public List<BookDto> Books { get; set; } = new();
+    }
+
+    public class CreateAuthorDto
+    {
+        public string Name { get; set; } = string.Empty;
+        public string? Country { get; set; }
+    }
+
+    public class UpdateAuthorDto
+    {
+        public string Name { get; set; } = string.Empty;
+        public string? Country { get; set; }
+    }
+}
