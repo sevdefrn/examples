@@ -10,7 +10,7 @@ namespace StudentDemo.Core.Interfaces
     public interface IBookRepository : IRepository<Book>
     {
         // Kitaba göre metotlar
-        Task<IEnumerable<Book>> GetBooksByAuthorsIdAsync(int authorId);
+        Task<IEnumerable<Book>> GetBooksByAuthorIdAsync(int authorId);
         Task<Book?> GetBookWithAuthorAsync(int id);
         Task<IEnumerable<Book>> GetAllWithAuthorsAsync();
         Task<Book?> GetByIsbnAsync(string isbn);

@@ -45,7 +45,7 @@ namespace StudentDemo.Core.Services
         /// </summary>
         public async Task<IEnumerable<BookDto>> GetBooksByAuthorIdAsync(int authorId)
         {
-            var books = await _unitOfWork.Books.GetBooksByAuthorsIdAsync(authorId);
+            var books = await _unitOfWork.Books.GetBooksByAuthorIdAsync(authorId);
             return books.Select(MapToDto);
         }
 
