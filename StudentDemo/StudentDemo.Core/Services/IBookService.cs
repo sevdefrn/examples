@@ -10,7 +10,7 @@ namespace StudentDemo.Core.Services
     public interface IBookService
     {
         Task<IEnumerable<BookDto>> GetAllBooksAsync();
-        Task<BookDto?> GetByIdAsync(int id);
+        Task<BookDto?> GetBookByIdAsync(int id);
         Task<IEnumerable<BookDto>> GetBooksByAuthorIdAsync(int authorId);
         Task<BookDto?> GetBookByIsbnAsync(string isbn);
         Task<BookDto> CreateBookAsync(CreateBookDto dto);
