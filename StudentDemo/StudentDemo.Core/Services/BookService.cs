@@ -33,7 +33,7 @@ namespace StudentDemo.Core.Services
         /// <summary>
         /// ID'ye göre kitap getirir
         /// </summary>
-        public async Task<BookDto?> GetByIdAsync(int id)
+        public async Task<BookDto?> GetBookByIdAsync(int id)
         {
             var book = await _unitOfWork.Books.GetBookWithAuthorAsync(id);
             return book == null ? null : MapToDto(book);
