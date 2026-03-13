@@ -1,0 +1,94 @@
+﻿@page
+@model PrivacyModel
+@{
+    ViewData["Title"] = "Privacy Policy";
+}
+<h1>@ViewData["Title"]</h1>
+
+<div class="container py-5">
+    <div class="text-center mb-5">
+        <div class="display-4 text-primary mb-3">
+            <i class="bi bi-shield-check"></i>
+        </div>
+        <h1 class="fw-bold">Gizlilik Politikası</h1>
+        <p class="lead text-muted">Verilerinizin güvenliği bizim için öğrenci başarısı kadar önemlidir.</p>
+        <hr class="w-25 mx-auto border-primary border-2">
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card shadow-sm border-0 mb-4 bg-light">
+                <div class="card-body p-4">
+                    <h4 class="card-title text-dark d-flex align-items-center">
+                        <i class="bi bi-collect me-2 text-primary"></i> Hangi Verileri Topluyoruz?
+                    </h4>
+                    <p class="card-text">
+                        StudentDemo projesi kapsamında sadece akademik amaçlı kullanılan; kitap isimleri, yazar bilgileri ve demo süreci için gerekli temel kullanıcı verilerini topluyoruz.
+                        <strong>Asla şifrelerinizi veya kredi kartı bilgilerinizi saklamıyoruz.</strong>
+                    </p>
+                </div>
+            </div>
+
+            <div class="card shadow-sm border-0 mb-4">
+                <div class="card-body p-4">
+                    <h4 class="card-title text-dark d-flex align-items-center">
+                        <i class="bi bi-eye-slash me-2 text-success"></i> Verileriniz Nasıl Korunuyor?
+                    </h4>
+                    <p class="card-text">
+                        Toplanan tüm veriler güvenli API katmanımız üzerinden şifrelenerek taşınır. Veritabanımız modern güvenlik protokolleri ile korunmakta olup, üçüncü taraflarla kesinlikle paylaşılmamaktadır.
+                    </p>
+                </div>
+            </div>
+
+            <div class="accordion shadow-sm" id="privacyAccordion">
+                <div class="accordion-item border-0">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                            Çerez (Cookie) Kullanımı
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#privacyAccordion">
+                        <div class="accordion-body text-muted">
+                            Sitemizde sadece deneyiminizi iyileştirmek ve oturum yönetimi sağlamak adına temel çerezler kullanılır. Reklam amaçlı takip çerezleri kullanılmaz.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item border-0">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                            Kullanıcı Haklarınız
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#privacyAccordion">
+                        <div class="accordion-body text-muted">
+                            KVKK kapsamında verilerinizin silinmesini, güncellenmesini veya kopyasının tarafınıza iletilmesini her zaman talep edebilirsiniz.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-5 p-4 rounded-3 bg-primary text-white text-center shadow">
+                <h5 class="mb-2">Sorularınız mı var?</h5>
+                <p class="mb-0 opacity-75">Gizlilik ile ilgili her türlü sorunuz için destek ekibimizle iletişime geçebilirsiniz.</p>
+                <a href="mailto:destek@studentdemo.com" class="btn btn-light btn-sm mt-3 px-4 rounded-pill fw-bold">Bize Ulaşın</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .accordion-button:not(.collapsed) {
+        background-color: #f8f9fa;
+        color: #0d6efd;
+        box-shadow: none;
+    }
+
+    .card {
+        border-radius: 15px;
+        transition: transform 0.3s ease;
+    }
+
+        .card:hover {
+            transform: scale(1.01);
+        }
+</style>

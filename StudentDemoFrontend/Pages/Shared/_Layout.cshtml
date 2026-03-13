@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - StudentDemoFrontend</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/StudentDemoFrontend.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-light bg-gradient-custom border-bottom shadow-sm mb-4 py-3">
+            <div class="container">
+                <a class="navbar-brand fw-bold text-primary d-flex align-items-center" asp-area="" asp-page="/Index">
+                    <span class="brand-icon me-2">🎓</span>
+                    <span class="brand-text">StudentDemo</span>
+                </a>
+
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-end">
+                    <ul class="navbar-nav align-items-center">
+                        <li class="nav-item">
+                            <a class="nav-link px-3 active-link" asp-area="" asp-page="/Index">
+                                <i class="bi bi-house-door me-1"></i> Anasayfa
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-3" asp-area="" asp-page="/Privacy">
+                                <i class="bi bi-shield-lock me-1"></i> Gizlilik
+                            </a>
+                        </li>
+                        <li class="nav-item ms-lg-3">
+                            <a class="btn btn-outline-primary btn-sm rounded-pill px-4" asp-page="/Giris">Giriş Yap</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <style>
+            /* Navbar Arka Planı */
+            .bg-gradient-custom {
+                background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            }
+
+            /* Linklerin Üzerine Gelince Efekt */
+            .navbar-nav .nav-link {
+                color: #555 !important;
+                font-weight: 500;
+                transition: all 0.3s ease;
+                position: relative;
+            }
+
+                .navbar-nav .nav-link:hover {
+                    color: #0d6efd !important;
+                    transform: translateY(-2px);
+                }
+
+            /* Marka (Logo) Animasyonu */
+            .navbar-brand:hover .brand-icon {
+                transform: scale(1.2) rotate(10deg);
+                display: inline-block;
+                transition: transform 0.3s ease;
+            }
+
+            /* Altı Çizili Aktif Link Efekti */
+            .active-link {
+                color: #0d6efd !important;
+            }
+        </style>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2026 - StudentDemoFrontend - <a asp-area="" asp-page="/Privacy">Privacy</a>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
